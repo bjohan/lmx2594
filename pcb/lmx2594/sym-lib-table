@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name lmx2594)(type Legacy)(uri /home/bjohan/git_wd/lmx2594/pcb/lmx2594/lmx2594.lib)(options "")(descr ""))
+)
