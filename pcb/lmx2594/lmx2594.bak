@@ -962,16 +962,13 @@ VCC
 Wire Wire Line
 	5400 3300 5050 3300
 Connection ~ 5400 3300
-Text Label 5050 3300 0    50   ~ 0
+Text Label 4550 3300 0    50   ~ 0
 VCC
 Wire Wire Line
 	5350 4100 5350 4000
-Wire Wire Line
-	5350 3600 5400 3600
 Connection ~ 5350 4100
 Wire Wire Line
 	5350 4100 5000 4100
-Connection ~ 5400 3600
 Connection ~ 5350 4000
 Wire Wire Line
 	5350 4000 5300 4000
@@ -990,8 +987,6 @@ Wire Wire Line
 Connection ~ 5350 3700
 Wire Wire Line
 	5350 3700 5300 3700
-Wire Wire Line
-	5350 3700 5350 3600
 Wire Wire Line
 	10400 2800 10150 2800
 Wire Wire Line
@@ -1931,10 +1926,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 6650 3150 6700
 $Comp
-L Device:R R?
+L Device:R R23
 U 1 1 5CD25BC9
 P 5000 4300
-F 0 "R?" V 4793 4300 50  0000 C CNN
+F 0 "R23" V 4793 4300 50  0000 C CNN
 F 1 "10K" V 4884 4300 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603" V 4930 4300 50  0001 C CNN
 F 3 "~" H 5000 4300 50  0001 C CNN
@@ -1946,5 +1941,82 @@ Wire Wire Line
 Wire Wire Line
 	4850 4300 4650 4300
 Text Label 4650 4300 0    50   ~ 0
+VCC
+Text Notes 9250 2400 0    50   ~ 0
+Add LED for PG on regulator
+Text Notes 5750 3200 0    50   ~ 0
+Use VRF instead
+$Comp
+L Device:R R25
+U 1 1 5CFBE008
+P 4900 3000
+F 0 "R25" V 4693 3000 50  0000 C CNN
+F 1 "0" V 4784 3000 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" V 4830 3000 50  0001 C CNN
+F 3 "~" H 4900 3000 50  0001 C CNN
+	1    4900 3000
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R26
+U 1 1 5CFBE134
+P 4900 3300
+F 0 "R26" V 4693 3300 50  0000 C CNN
+F 1 "0" V 4784 3300 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" V 4830 3300 50  0001 C CNN
+F 3 "~" H 4900 3300 50  0001 C CNN
+	1    4900 3300
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5050 3300 5050 3000
+Connection ~ 5050 3300
+Wire Wire Line
+	4750 3000 4550 3000
+Wire Wire Line
+	4750 3300 4550 3300
+Text Label 4550 3000 0    50   ~ 0
+VRF
+$Comp
+L Device:R R24
+U 1 1 5CFEBE2A
+P 9700 2100
+F 0 "R24" V 9493 2100 50  0000 C CNN
+F 1 "150" V 9584 2100 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" V 9630 2100 50  0001 C CNN
+F 3 "~" H 9700 2100 50  0001 C CNN
+	1    9700 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 5CFEBE30
+P 10100 2100
+F 0 "D4" H 10092 1845 50  0000 C CNN
+F 1 "LED" H 10092 1936 50  0000 C CNN
+F 2 "LEDs:LED_0805_HandSoldering" H 10100 2100 50  0001 C CNN
+F 3 "~" H 10100 2100 50  0001 C CNN
+	1    10100 2100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10350 2100 10250 2100
+Wire Wire Line
+	9950 2100 9850 2100
+Wire Wire Line
+	9550 2100 9200 2100
+Text Label 9200 2100 0    50   ~ 0
+VCC
+Wire Wire Line
+	4850 1600 5200 1600
+Text Label 4950 1600 0    50   ~ 0
+PG
+Text Label 10350 2100 0    50   ~ 0
+PG
+Wire Wire Line
+	5350 3700 5350 3600
+Wire Wire Line
+	5350 3600 5000 3600
+Text Label 5000 3600 0    50   ~ 0
 VCC
 $EndSCHEMATC
