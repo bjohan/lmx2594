@@ -49,6 +49,7 @@ class ArduinoInterface:
         cmd = b"w %d %d\r"%(ra, v)
         self.s.write(cmd)
         d = self.s.readline()
+        #print d,ra, v
         if not "Wrote" in d.decode():
             raise IOError("Device did not reply to write command, got %s"%(d));
         v2, r = self.parse(d)
@@ -97,63 +98,6 @@ class Lmx2594(ArduinoInterface):
         #self.s.timeout = 1
         print("Done")
 
-    #def parse(self, d):
-    #    o = []
-    #    l = d.decode().split(':')
-    #    for t in l[1:]:
-    #        o.append(int(t.strip().split()[0]))
-    #    return o
-
-    #def read(self, ra):
-    #    if self.regShadow[0]&0x4:
-    #        self.write(0, self.regShadow[0]-0x4)
-
-    #    cmd = b"r %d\r"%(ra)
-    #    self.s.write(cmd)
-    #    d = self.s.readline()
-    #    if not "Read" in d.decode():
-    #        raise IOError("Device did not reply to read command")
-    #    v, r = self.parse(d)
-    #    if r != ra:
-    #        raise ValueError("Device responded with read for wrong register")
-    #    self.regShadow[ra] = v
-    #    return v
-    
-    #def write(self, ra, v):
-    #    cmd = b"w %d %d\r"%(ra, v)
-    #    self.s.write(cmd)
-    #    d = self.s.readline()
-    #    if not "Wrote" in d.decode():
-    #        raise IOError("Device did not reply to write command, got %s"%(d));
-    #    v2, r = self.parse(d)
-    #    if ra != r:
-    #        raise ValueError("Device responded with write for wrong register address")
-    #    if v2 != v:
-    #        raise ValueError("Device reported writing wrong value to register");
-    #    self.regShadow[ra] = v
-
-    #def chipEnable(self, state):
-    #    if state:
-    #        self.s.write(b"c 1\r");
-    #    else:
-    #        self.s.write(b"c 0\r");
-    #    d = self.s.readline()
-    #    if not "CE" in d.decode():
-    #        raise IOError("Device did not respond to chip enable command"+str(d))
-    #    s, = self.parse(d)
-    #    s = (s == 1)
-    #    if s != state:
-    #        raise ValueError("Device reported wrong CE pin state")
-
-
-    #def reset(self):
-    #    self.chipEnable(False)
-    #    time.sleep(0.01)
-    #    self.chipEnable(True)
-    #    self.write(0, 1)
-    #    time.sleep(0.01)
-    #    self.write(0, 0)
-
     def applyConfig(self, fn):
         a = open(fn)
         t = a.read()
@@ -180,12 +124,21 @@ class Lmx2594(ArduinoInterface):
         #F_osc*OSC_2X*MULT/(PLL_R_PRE*PLL_R)
         return 2*self.fref;
 
+    def setRefDoubler(self, enabled):
+        if enabled:
+            self.assignBit(9, 1, 12)
+        else:
+            self.assignBit(9, 0, 12)
+
+    def getRefDoubler(self):
+        pass
+
     def setFrequency(self,f):
         chdivs = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 72, 96, 128, 192, 256, 384, 512, 768]
         #Set n divider
         #set PLL num and den
         #program fcal r0[3]=1
-
+        self.assignBit(9, 1, 12)
         #F_vco = fpdX(N+NUM/DEN)
         chdiv = None
         if f < 7.5e9:
@@ -261,23 +214,24 @@ class Lmx2594(ArduinoInterface):
         self.write(46, rv)
 
 print("Creating LMX obect")
-lmx = Lmx2594(sys.argv[1])
+lmx = Lmx2594(sys.argv[1], fref=109.325e6)
 print("Resetting LMX")
 lmx.reset()
 print("Applying config")
 lmx.applyConfig('HexRegisterValues.txt')
 time.sleep(0.1)
 
-#lmx.enableLockDetect(True)
+lmx.enableLockDetect(True)
 print("Is locked: ", lmx.isLocked())
 lmx.enableLockDetect(True)
 lmx.setPower(8*2*0+31)
 lmx.setPowerB(8*2*0+31)
 freqRange = np.linspace(0.01, 1.8, 501)
 freqRange = np.linspace(1.7, 15, 501)
+freqRange = [8.5]
 for f in freqRange:#np.linspace(1.7, 15, 501):
     lmx.setFrequency(f*1e9)
     print("Is locked: ", lmx.isLocked())
     lmx.enableLockDetect(True)
-    time.sleep(0.1)
-
+    time.sleep(1.1)
+input("enter to quit")
