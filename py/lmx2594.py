@@ -31,10 +31,10 @@ class HardwareInterface:
 
     def reset(self):
         self.chipEnable(False)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.chipEnable(True)
         self.write(0, 1)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.write(0, 0)
 
 
@@ -171,6 +171,8 @@ class Lmx2594:
         a = open(fn)
         t = a.read()
         for l in t.splitlines():
+            sys.stdout.write('.')
+            sys.stdout.flush()
             r = l.split("0x")[-1]
             a = int(r[0:2],16)
             v = int(r[2:], 16)
@@ -190,9 +192,16 @@ class Lmx2594:
         return self.readLockDetectStatus()==2
 
     def getFpd(self):
-        #F_osc*OSC_2X*MULT/(PLL_R_PRE*PLL_R)
-        #return 2*self.fosc;
-        return self.fosc*(1+self.getField('OSC_2X'))*self.getField('MULT')/(self.getField('PLL_R_PRE')*self.getField('PLL_R'))
+        ##F_osc*OSC_2X*MULT/(PLL_R_PRE*PLL_R)
+        ##return 2*self.fosc;
+        OSC_2X = self.getField('OSC_2X')
+        MULT = self.getField('MULT')
+        PLL_R_PRE = self.getField('PLL_R_PRE')
+        PLL_R = self.getField('PLL_R')
+        #print(OSC_2X, MULT, PLL_R_PRE, PLL_R)
+        ##return self.fosc*(1+self.getField('OSC_2X'))*self.getField('MULT')/(self.getField('PLL_R_PRE')*self.getField('PLL_R'))
+        return self.fosc*(1+OSC_2X)*MULT/(PLL_R_PRE*PLL_R)
+        #return self.fosc
 
     def setFrequency(self,f):
         chdivs = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 72, 96, 128, 192, 256, 384, 512, 768]
@@ -221,7 +230,7 @@ class Lmx2594:
         self.iface.write(39, den & 0xFFFF)
         self.iface.write(42, num >> 16)
         self.iface.write(43, num & 0xFFFF)
-        self.iface.write(0, self.read(0)|0x8)
+        self.iface.write(0, self.iface.read(0)|0x8)
 
         if chdiv is not None:
             if chdiv == 0:
