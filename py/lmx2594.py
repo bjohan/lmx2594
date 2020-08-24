@@ -220,7 +220,7 @@ class Lmx2594:
         if chdiv is not None:
             print("Corrected frequency and division factor", f, chdivs[chdiv])
 
-        #print("phase detector frequency", self.getFpd()/1e6)
+        print("phase detector frequency", self.getFpd()/1e6)
         factor = f/self.getFpd()
         n = int(factor)
         num = int((factor-n)*0xFFFFFFFF)
@@ -252,7 +252,7 @@ class Lmx2594:
             self.assignBit(45, 0, 12)
             self.assignBit(46, 1, 0)
             self.assignBit(46, 0, 1)
-            print("Actual frequency vco: ", self.getFpd()*(n+num/float(den)))
+            print("Actual frequency vco: ", self.getFpd()*(float(n)+float(num)/float(den)))
         
     def assignBit(self, ra, val, bit):
         rv = self.iface.read(ra)
