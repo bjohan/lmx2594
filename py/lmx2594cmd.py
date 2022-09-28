@@ -329,6 +329,7 @@ if __name__ == '__main__':
     print("Is locked: ", lmx.isLocked())
     if len(sys.argv)==3:
         lmx.setFrequency(float(sys.argv[2]))
+        input("press enter to quit")
         quit()
 
     freqRange = np.linspace(1.8, 15, 1001)[::-1]
