@@ -83,7 +83,8 @@ class ArduinoInterface:
 
 
 class Lmx2594(ArduinoInterface):
-
+    
+    chdivs = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 72, 96, 128, 192, 256, 384, 512, 768]
     registerMap = {
         0: {"RAMP_EN": [15], "VCO_PHASE_SYNC": [14], "OUT_MUTE": [9], "FCAL_HPFD_ADJ":range(7,9), "FCAL_LPFD_ADJ":range(5,7), "FCAL_EN": [3], "MUX_OUT_LD_SEL":[2], "RESET":[1], "POWERDOWN":[0]},
         1: {"CAL_CLK_DIV":[0, 1, 2]},
@@ -116,7 +117,8 @@ class Lmx2594(ArduinoInterface):
         59: {"LD_TYPE":[0]},
         60: {"LD_DLY":range(0, 16)},
         69: {"MASH_RST_COUNT_31_TO_16":range(0, 16)},
-        69: {"MASH_RST_COUNT_15_TO_0":range(0, 16)},
+        70: {"MASH_RST_COUNT_15_TO_0":range(0, 16)},
+        75: {"CHDIV": range(6, 11)},
         #ignoring sysref and ramping
         110: {"rb_LD_VTUNE":range(9, 11), "rb_VCO_SEL":range(5,8)},
         111: {"rb_VCO_CAPCTRL":range(0, 8)},
@@ -125,11 +127,77 @@ class Lmx2594(ArduinoInterface):
 
 
 
-    def __init__(self, port, fosc=100e6):
+    def __init__(self, port, fosc=100e6, mash_order=3):
         ArduinoInterface.__init__(self, port, 115200)
         self.fosc=fosc
+        self.mash_order = mash_order
+
+
         print("Created LMX object wit fosc", fosc/1e6)
         self.initialize()
+        #self.setField('OSC_2X', 0)
+        print("FPD is %f MHz"%(self.getFpd()/1e6))
+    
+    def initialize(self):
+        print("Resetting LMX")
+        self.reset()
+        print("Applying config")
+        self.applyConfig('10GOut320MRef.txt')
+        self.setupReferencePath()
+        self.setField('OUTB_PD', 0)
+        self.setField('OUTA_MUX', 1)
+        self.setField('OUTB_MUX', 1)
+        self.setField('MASH_ORDER', self.mash_order)
+        self.setField('OUTA_PWR', 3)
+        self.setField('OUTB_PWR', 3)
+        time.sleep(0.1)
+        self.setFrequency(10e9)
+        time.sleep(0.1)
+        self.enableLockDetect(True)
+        print("Is locked: ", self.isLocked())
+        
+
+    def setupReferencePath(self):
+        ref=self.fosc
+        if ref < 200e6:
+            self.setField('OSC_2X',1)
+            ref=ref*2
+        else:
+            self.setField('OSC_2X', 0)
+        
+        if ref > 250e6:
+            div=int(ref/250.0e6+1)
+        else: 
+            div=1
+        print("PRE DIVIDER", div)
+        self.setField('PLL_R_PRE', div)
+        ref=ref/div
+
+        if ref<250e6/3:
+            mul=int(250.0e6/ref+1)
+            if mul > 7:
+                mul = 7
+        else:
+            mul=1
+
+        print("REF MULT", mul)
+        self.setField('MULT', mul)
+        ref=ref*mul
+
+        self.setField('PLL_R', 1)
+        if ref != self.getFpd():
+            raise Exception("ERROR in setup reference path. expected %f, got %f"%(ref, self.getFpd()))
+
+        self.setField('CAL_CLK_DIV', 3)
+
+            
+
+
+    def printConfig(self):
+        for r in self.registerMap:
+            fs=self.registerMap[r].keys();
+            for f in fs:
+                print(f, self.getField(f))
 
     def applyConfig(self, fn):
         a = open(fn)
@@ -160,32 +228,101 @@ class Lmx2594(ArduinoInterface):
 
     def setCwMode(self):
         pass
+
     def setCwFreq(self,f):
         self.setFrequency(f)
         self.enableLockDetect(True)
 
+
+    def computeChDivAndVcoFrequency(self, f):
+        chdiv = None
+        if f < 7.5e9:
+            for i in range(len(Lmx2594.chdivs)):
+                if f*Lmx2594.chdivs[i] > 7.5e9:
+                    f = f*Lmx2594.chdivs[i]
+                    chdiv = i
+                    break
+        return chdiv, f
+
+
+    def raiseNExceptionIfNeeded(self, n, nmin):
+                if n < nmin:
+                    raise Exception("N must be greater than or equal to %d. Computed n was %d"%(nmin, n))
+
+    def computeNAndPfdDlySel(self, f):
+        factor = f/self.getFpd()
+        n = int(factor)
+
+        pfd_dly_sel = None
+        if self.mash_order == 0:
+            if f <= 12.5e9:
+                pfd_dly_sel=1
+                self.raiseNExceptionIfNeeded(n, 28)
+            else:
+                pfd_dly_sel = 2
+                self.raiseNExceptionIfNeeded(n, 32)
+
+        if self.mash_order == 1:
+            if f <= 10e9:
+                pfd_dly_sel=1
+                self.raiseNExceptionIfNeeded(n, 28)
+            elif f < 12.5e9:
+                pfd_dly_sel=2
+                self.raiseNExceptionIfNeeded(n, 32)
+            else:
+                pfd_dly_sel=3
+                self.raiseNExceptionIfNeeded(n, 36)
+
+        if self.mash_order == 2:
+            if f <= 10e9:
+                pfd_dly_sel=2
+                self.raiseNExceptionIfNeeded(n, 32)
+            else:
+                pfd_dly_sel=3
+                self.raiseNExceptionIfNeeded(n, 36)
+
+        if self.mash_order == 3:
+            if f <= 10e9:
+                pfd_dly_sel=3
+                self.raiseNExceptionIfNeeded(n, 36)
+            else:
+                pfd_dly_sel=4
+                self.raiseNExceptionIfNeeded(n, 40)
+        
+        if self.mash_order == 4:
+            if f <= 10e9:
+                pfd_dly_sel=5
+                self.raiseNExceptionIfNeeded(n, 44)
+            else:
+                pfd_dly_sel=6
+                self.raiseNExceptionIfNeeded(n, 48)
+        return n, pfd_dly_sel
+
+
+
+
     def setFrequency(self,f):
-        chdivs = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 72, 96, 128, 192, 256, 384, 512, 768]
         #Set n divider
         #set PLL num and den
         #program fcal r0[3]=1
 
         #F_vco = fpdX(N+NUM/DEN)
-        chdiv = None
-        if f < 7.5e9:
-            for i in range(len(chdivs)):
-                if f*chdivs[i] > 7.5e9:
-                    f = f*chdivs[i]
-                    chdiv = i
-                    break
-        #if chdiv is not None:
-        #    print("Corrected frequency and division factor", f, chdivs[chdiv])
 
+        chdiv, f = self.computeChDivAndVcoFrequency(f)
+        #print("CHDIV", chdiv, f)
+        if chdiv is not None:
+            if Lmx2594.chdivs[chdiv] > 6 and f > 11.5e9:
+                raise Exception("chdiv > 6 and fvco > 11.5e9, chdiv is", Lmx2594.chdivs[chdiv], "and fvco is", f)
+
+
+        n, pfd_dly_sel = self.computeNAndPfdDlySel(f)
+        #print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
         #print("phase detector frequency", self.getFpd()/1e6)
         factor = f/self.getFpd()
-        n = int(factor)
+        #n = int(factor)
         num = int((factor-n)*0xFFFFFFFF)
         den = 0xFFFFFFFF
+        #print("Factor", factor)
         self.write(36, n);
         self.write(38, den >> 16)
         self.write(39, den & 0xFFFF)
@@ -194,27 +331,27 @@ class Lmx2594(ArduinoInterface):
         self.write(0, self.read(0)|0x8)
 
         if chdiv is not None:
-            if chdiv == 0:
-                self.assignBit(31, 0, 14)
+            if chdiv > 0:
+                self.setField('CHDIV_DIV2', 1)
             else:
-                self.assignBit(31, 1, 14)
-            rv = self.read(75)
-            rv = rv &0xF807| (chdiv<<6)
-            self.write(75, rv)
-            #print("reg75 %x"%(rv))
-            self.assignBit(45, 0, 11)
-            self.assignBit(45, 0, 12)
-            self.assignBit(46, 0, 0)
-            self.assignBit(46, 0, 1)
-            #print("reg45 %x"%(self.read(45)))
-            #print("Actual frequency with divider: ", self.getFpd()*(n+num/float(den))/chdivs[chdiv])
+                self.setField('CHDIV_DIV2', 0)
+            self.setField('CHDIV', chdiv)
+            self.setField('OUTA_MUX', 0)
+            self.setField('OUTB_MUX', 0)
+            factual=self.getFpd()*(n+num/float(den))/Lmx2594.chdivs[chdiv]
+            fvco=self.getFpd()*(n+num/float(den))
         else:
-            self.assignBit(45, 1, 11)
-            self.assignBit(45, 0, 12)
-            self.assignBit(46, 1, 0)
-            self.assignBit(46, 0, 1)
+            self.setField('OUTA_MUX', 1)
+            self.setField('OUTB_MUX', 1)
+            factual=self.getFpd()*(n+num/float(den))
+            fvco=self.getFpd()*(n+num/float(den))
             #print("Actual frequency vco: ", self.getFpd()*(n+num/float(den)))
-        
+        self.setField('PFD_DLY_SEL', pfd_dly_sel)
+        self.setField('FCAL_EN', 1)
+        #print("VCO frequency", fvco, "Actual frequency", factual)
+        #print("Requested f:", f, "Actual f:", factual, "N:", n, "pfd_dly_sel:", pfd_dly_sel, "CHDIV:", chdiv, "factor:", factor)
+        return factual, fvco, n
+
     def assignBit(self, ra, val, bit):
         rv = self.read(ra)
         mask = list('1'*16)
@@ -299,21 +436,6 @@ class Lmx2594(ArduinoInterface):
         #print(vBits, vBitsNew)
         self.write(reg, int(vBitsNew[::-1], 2))
 
-    def initialize(self):
-        print("Resetting LMX")
-        self.reset()
-        print("Applying config")
-        self.applyConfig('10GOut320MRef.txt')
-        self.setField('OUTB_PD', 0)
-        self.setField('OUTA_MUX', 1)
-        self.setField('OUTB_MUX', 1)
-        time.sleep(0.1)
-        self.setFrequency(10e9)
-        time.sleep(0.1)
-        self.enableLockDetect(True)
-        print("Is locked: ", self.isLocked())
-        
-
 
 
 if __name__ == '__main__':
@@ -324,11 +446,17 @@ if __name__ == '__main__':
         return o
 
     print("Creating LMX obect")
-    lmx = Lmx2594(sys.argv[1], fosc=320e6)
+    lmx = Lmx2594(sys.argv[1], fosc=280e6, mash_order=4)
     lmx.enableLockDetect(True)
     print("Is locked: ", lmx.isLocked())
-    if len(sys.argv)==3:
+    if len(sys.argv)>=3:
+        pwr=32
+        if len(sys.argv)>= 4:
+            pwr=int(sys.argv[3])
+        lmx.setField('OUTA_PWR', pwr)
+        lmx.setField('OUTB_PWR', pwr)
         lmx.setFrequency(float(sys.argv[2]))
+        input("press enter to exit")
         quit()
 
     freqRange = np.linspace(1.8, 15, 1001)[::-1]
