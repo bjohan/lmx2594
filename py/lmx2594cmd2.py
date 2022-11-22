@@ -126,9 +126,9 @@ class Lmx2594():
 
     def chipEnable(self, state):
         if state:
-            print(self.query(b'E 1'))
+            self.query(b'E 1')
         else:
-            print(self.query(b'E 0'))
+            self.query(b'E 0')
 
     def spiReset(self):
         self.writeRegister(0, 2);
@@ -141,9 +141,9 @@ class Lmx2594():
 
     def initialize(self):
         print("Resetting LMX")
-        print(self.readRegister(9))
+        #print(self.readRegister(9))
         self.reset()
-        print(self.readRegister(9))
+        #print(self.readRegister(9))
         print("Applying config")
         self.applyConfig('10GOut320MRef.txt')
         self.writeRegister(0, 0)
@@ -550,6 +550,7 @@ if __name__ == '__main__':
     parser.add_argument("port", help='For instance /dev/ttyUSB0')
     parser.add_argument('-f', '--frequency', help="Set frequency", type=float);
     parser.add_argument('-r', '--reference', help="Reference frequency", type=float);
+    parser.add_argument('-mo', '--mash-order', help="Order of delta sigma", type=int);
     parser.add_argument('-m', '--macro', help="Record macro while setting frequency that will be executed at boot. This means that the device will set the specified frequency during power on even without a computer", action='store_true')
     parser.add_argument('-l', '--locked', help="Check lock status", action='store_true');
     args=parser.parse_args()
@@ -562,7 +563,14 @@ if __name__ == '__main__':
     reference=280e6;
     if args.reference:
         reference=args.reference
-    d=Lmx2594(args.port, fosc=reference, macro=args.macro)
+
+    mash_order = 3
+    if args.mash_order:
+        mash_order = args.mash_order
+        if mash_order not in range(5):
+            print("Mash order must be in range 0..4")
+
+    d=Lmx2594(args.port, fosc=reference, macro=args.macro, mash_order=mash_order)
     if args.frequency:
         #d.setFrequency(args.frequency)
         d.setFrequency2(args.frequency)
@@ -577,37 +585,4 @@ if __name__ == '__main__':
         print(d.macro(False).decode('ascii').strip())
     input("press enter to continue");
 
-
-
-
-
-#    def getIndices(l, i):
-#        o = ''
-#        for j in i:
-#            o+=l[j]
-#        return o
-#
-#    print("Creating LMX obect")
-#    lmx = Lmx2594(sys.argv[1], fosc=280e6, mash_order=4)
-#    lmx.enableLockDetect(True)
-#    print("Is locked: ", lmx.isLocked())
-#    if len(sys.argv)>=3:
-#        pwr=32
-#        if len(sys.argv)>= 4:
-#            pwr=int(sys.argv[3])
-#        lmx.setField('OUTA_PWR', pwr)
-#        lmx.setField('OUTB_PWR', pwr)
-#        lmx.setFrequency(float(sys.argv[2]))
-#        input("press enter to exit")
-#        quit()
-
-#    freqRange = np.linspace(1.8, 15, 1001)[::-1]
-#    pbar = tqdm.tqdm(freqRange)
-#    for f in pbar:#np.linspace(1.7, 15, 501):
-#        lmx.setFrequency(f*1e9)
-#        #print("Is locked: ", lmx.isLocked())
-#        pbar.set_description("frequency %f rb_LD_VTUNE"%(f)+str(lmx.getField("rb_LD_VTUNE")))
-#        pbar.refresh()
-#        lmx.enableLockDetect(True)
-#        time.sleep(1)
 
