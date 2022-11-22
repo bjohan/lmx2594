@@ -1,88 +1,15 @@
+#!/usr/bin/python3
 import serial
 import sys
 import time
 import numpy as np
 import tqdm
+import mpmath as mp
+import math 
+import fractions
+mp.mp.dps=100
 
-class ArduinoInterface:
-    def __init__(self, port, baud):    
-        self.s = serial.Serial(port, 115200, timeout = 1)
-        self.regShadow = {}
-        self.flush(to = 2)
-
-    def flush(self, to = 1):
-        tl = self.s.timeout
-        self.s.timeout=to
-        fd = []
-        while True:
-            d = self.s.read()
-            if len(d) == 0:
-                break
-            fd+=fd
-        if len(fd) > 0:
-            print("Flushed: ", ''.join(fd))
-        self.s.timeout=tl
-        
-    def parse(self, d):
-        o = []
-        l = d.decode().split(':')
-        for t in l[1:]:
-            o.append(int(t.strip().split()[0]))
-        return o
-
-    def read(self, ra):
-        if self.regShadow[0]&0x4:
-            self.write(0, self.regShadow[0]-0x4)
-
-        cmd = b"r %d\r"%(ra)
-        self.s.write(cmd)
-        d = self.s.readline()
-        if not "Read" in d.decode():
-            raise IOError("Device did not reply to read command")
-        v, r = self.parse(d)
-        if r != ra:
-            raise ValueError("Device responded with read for wrong register")
-        self.regShadow[ra] = v
-        return v
-    
-    def write(self, ra, v):
-        cmd = b"w %d %d\r"%(ra, v)
-        self.s.write(cmd)
-        d = self.s.readline()
-        if not "Wrote" in d.decode():
-            raise IOError("Device did not reply to write command, got %s"%(d));
-        v2, r = self.parse(d)
-        if ra != r:
-            raise ValueError("Device responded with write for wrong register address")
-        if v2 != v:
-            raise ValueError("Device reported writing wrong value to register");
-        self.regShadow[ra] = v
-
-    def chipEnable(self, state):
-        if state:
-            self.s.write(b"c 1\r");
-        else:
-            self.s.write(b"c 0\r");
-        d = self.s.readline()
-        if not "CE" in d.decode():
-            raise IOError("Device did not respond to chip enable command"+str(d))
-        s, = self.parse(d)
-        s = (s == 1)
-        if s != state:
-            raise ValueError("Device reported wrong CE pin state")
-
-
-    def reset(self):
-        self.chipEnable(False)
-        time.sleep(0.01)
-        self.chipEnable(True)
-        self.write(0, 1)
-        time.sleep(0.01)
-        self.write(0, 0)
-
-
-
-class Lmx2594(ArduinoInterface):
+class Lmx2594():
     
     chdivs = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 72, 96, 128, 192, 256, 384, 512, 768]
     registerMap = {
@@ -126,9 +53,19 @@ class Lmx2594(ArduinoInterface):
         }
 
 
+    def __init__(self, port, fosc=100e6, mash_order=3, timeout=5, macro=False):
+        self.shadowMap={}
+        if isinstance(port, str):
+            self.d=serial.Serial(port, 115200, timeout=timeout);
+        else:
+            self.d=port
 
-    def __init__(self, port, fosc=100e6, mash_order=3):
-        ArduinoInterface.__init__(self, port, 115200)
+        print("Waiting for LMX2594 to boot");
+        msg = self.readOutput(finalToken=b'READY');
+        print("Booted successfully");
+
+        if macro:
+            print(self.macro(True).decode('ascii').strip())
         self.fosc=fosc
         self.mash_order = mash_order
 
@@ -137,12 +74,79 @@ class Lmx2594(ArduinoInterface):
         self.initialize()
         #self.setField('OSC_2X', 0)
         print("FPD is %f MHz"%(self.getFpd()/1e6))
+   
+
+    def write(self, cmd):
+        if len(cmd)>15:
+            raise ValueError("Command is too long, 16 digits is the max");
+        self.d.write(cmd+b'\n')
+
+
+    def readOutput(self, finalToken=b'DONE\r\n'):
+        o=b'';
+        while True:
+            d=self.d.read(1)
+            if len(d) == 0:
+                raise Exception("Did not get expected response before timeout. Expected to get %s in \"%s\""%(finalToken, o))
+            o+=d;
+            if finalToken in o:
+                return o[0:-len(finalToken)];
+
+    def query(self, cmd):
+        self.write(cmd);
+        return self.readOutput()
+
+    def macro(self, state):
+        if state:
+            return self.query(b"M 1");
+        else:
+            return self.query(b"M 0");
+
+    def writeRegister(self, addr, value):
+        cmdstr=b"W %d %d"%(addr, value)
+        self.query(cmdstr)
+        self.shadowMap[addr]=value
+
+
+    def readRegister(self, addr, shadow=True):
+        if shadow and addr in self.shadowMap:
+            return self.shadowMap[addr]
+        cmdstr=b'R %d'%(addr);
+        resp=self.query(cmdstr).decode('ascii').split(': ')[1].split(' ')[0]
+        print(resp)
+        return int(resp)
     
+
+    def locked(self):
+        d=self.query(b'O')
+        d=d.strip()
+        s=d.split(b"PLL Output")[-1].strip()
+        return s==b'1'
+
+
+    def chipEnable(self, state):
+        if state:
+            print(self.query(b'E 1'))
+        else:
+            print(self.query(b'E 0'))
+
+    def spiReset(self):
+        self.writeRegister(0, 2);
+        self.writeRegister(0, 0);
+
+    def reset(self):
+        self.chipEnable(False)
+        self.chipEnable(True)
+        self.spiReset()
+
     def initialize(self):
         print("Resetting LMX")
+        print(self.readRegister(9))
         self.reset()
+        print(self.readRegister(9))
         print("Applying config")
         self.applyConfig('10GOut320MRef.txt')
+        self.writeRegister(0, 0)
         self.setupReferencePath()
         self.setField('OUTB_PD', 0)
         self.setField('OUTA_MUX', 1)
@@ -151,7 +155,7 @@ class Lmx2594(ArduinoInterface):
         self.setField('OUTA_PWR', 3)
         self.setField('OUTB_PWR', 3)
         time.sleep(0.1)
-        self.setFrequency(10e9)
+        #self.setFrequency(10e9)
         time.sleep(0.1)
         self.enableLockDetect(True)
         print("Is locked: ", self.isLocked())
@@ -190,9 +194,6 @@ class Lmx2594(ArduinoInterface):
 
         self.setField('CAL_CLK_DIV', 3)
 
-            
-
-
     def printConfig(self):
         for r in self.registerMap:
             fs=self.registerMap[r].keys();
@@ -206,17 +207,17 @@ class Lmx2594(ArduinoInterface):
             r = l.split("0x")[-1]
             a = int(r[0:2],16)
             v = int(r[2:], 16)
-            self.write(a, v)
+            self.writeRegister(a, v)
 
     def enableLockDetect(self, state):
         if state:
-            self.write(0, self.read(0)|0x4)
+            self.writeRegister(0, self.readRegister(0)|0x4)
         else:
-            self.write(0, self.read(0)&(0xFFFF-0x4))
+            self.writeRegister(0, self.readRegister(0)&(0xFFFF-0x4))
 
 
     def readLockDetectStatus(self):
-        return (self.read(110) >>9)&0x3
+        return (self.readRegister(110, shadow=False) >>9)&0x3
 
     def isLocked(self):
         return self.readLockDetectStatus()==2
@@ -224,6 +225,7 @@ class Lmx2594(ArduinoInterface):
     def getFpd(self):
         #F_osc*OSC_2X*MULT/(PLL_R_PRE*PLL_R)
         #return 2*self.fosc;
+        #print("2x", self.getField('OSC_2X'), "mult", self.getField('MULT'), "r pre",  self.getField('PLL_R_PRE'), "r", self.getField('PLL_R'))
         return self.fosc*(1+self.getField('OSC_2X'))*self.getField('MULT')/(self.getField('PLL_R_PRE')*self.getField('PLL_R'))
 
     def setCwMode(self):
@@ -297,7 +299,103 @@ class Lmx2594(ArduinoInterface):
                 pfd_dly_sel=6
                 self.raiseNExceptionIfNeeded(n, 48)
         return n, pfd_dly_sel
+   
+    def getMinimumNAndPfdDlySel(self, fvco, mash_order):
+        if mash_order == 0:
+            if fvco <= 12.5e9:
+                return 28, 1;
+            return 32, 2;
+        if mash_order == 1:
+            if fvco <= 10e9:
+                return 28, 1
+            if fvco <= 12.5e9:
+                return 32, 2
+            return 36, 3
+        if mash_order == 2:
+            if fvco <= 10e9:
+                return 32, 2
+            return 36, 3
+        if mash_order == 3:
+            if fvco <= 10e6:
+                return 36, 3
+            return 40, 4
+        if mash_order ==4:
+            if fvco <= 10e9:
+                return 44, 5
+            return 48, 6
+        raise Exception("Invalid mash order must be 0..4 and not %d"%(mash_order))
 
+
+    def setFrequency2(self, f, mash_order=4):
+        fpd = self.getFpd();
+        fvco=f
+        #determine vcoFrequency:
+        if fvco > 15e9:
+            raise ValueError("Frequency too high %f is more than 15e9"%(fvco))
+
+        chdiv = None
+        if fvco < 7.5e9:
+            chdiv = 0;
+            while True:
+                fvco=f*self.chdivs[chdiv]
+                if fvco >= 7.5e9:
+                    break
+                chdiv = chdiv + 1
+
+        minimumN, pfd_dly_sel = self.getMinimumNAndPfdDlySel(fvco, mash_order)
+
+        print("Determined fvco", fvco, "chdiv", chdiv)
+        multFrac = fractions.Fraction(int(fvco), int(fpd));
+
+        if minimumN > multFrac:
+            raise ValueError("Unable to set frequency, required multiplier is less than than minimum n, try reducing mash_order or fpd")
+
+        print("Multiplication fraction", multFrac)
+        fracfrac = multFrac-minimumN
+        print("Fractional fraction", fracfrac)
+
+        n = minimumN
+        num = fracfrac.numerator
+        den = fracfrac.denominator
+        if num > den:
+            extraN = int(int(num)/int(den));
+        n = n + extraN
+        num = num - den*extraN
+
+        if den > 0xFFFFFFFF:
+            print("WARNING, exact frequency is not possible using approximate frequency instead");
+            n = int(fvco/fpd)
+            f = float(fvco)/float(fpd)-n
+            den = 0xFFFFFFFF;
+            num = int(f*den)
+
+        #n = fvco/fpd-1 #minimumN
+        #num = 1 #fracfrac.numerator
+        #den = 1 #fracfrac.denominator
+
+        self.writeRegister(36, n);
+        self.writeRegister(38, den >> 16)
+        self.writeRegister(39, den & 0xFFFF)
+        self.writeRegister(42, num >> 16)
+        self.writeRegister(43, num & 0xFFFF)
+        self.setField('PFD_DLY_SEL', pfd_dly_sel)
+        self.setField('FCAL_EN', 1)
+        self.setField('MASH_ORDER', mash_order)
+        
+        if chdiv is not None:
+            if chdiv > 0:
+                self.setField('CHDIV_DIV2', 1)
+            else:
+                self.setField('CHDIV_DIV2', 0)
+            self.setField('CHDIV', chdiv)
+            self.setField('OUTA_MUX', 0)
+            self.setField('OUTB_MUX', 0)
+           
+        print("N", n, "num", num, "den", den)
+        factual=mp.mpf(fpd)*(mp.mpf(n)+mp.mpf(num)/mp.mpf(den))
+        print("Actual vco frequency", factual)
+        if chdiv is not None:
+            print("Output frequency", factual/self.chdivs[chdiv], self.chdivs[chdiv])
 
 
 
@@ -309,26 +407,34 @@ class Lmx2594(ArduinoInterface):
         #F_vco = fpdX(N+NUM/DEN)
 
         chdiv, f = self.computeChDivAndVcoFrequency(f)
-        #print("CHDIV", chdiv, f)
+        if chdiv is not None:
+            print("CHDIV", chdiv, f, self.chdivs[chdiv])
         if chdiv is not None:
             if Lmx2594.chdivs[chdiv] > 6 and f > 11.5e9:
                 raise Exception("chdiv > 6 and fvco > 11.5e9, chdiv is", Lmx2594.chdivs[chdiv], "and fvco is", f)
 
-
+        fpd = self.getFpd();
         n, pfd_dly_sel = self.computeNAndPfdDlySel(f)
         #print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
         #print("phase detector frequency", self.getFpd()/1e6)
-        factor = f/self.getFpd()
+        factor = f/fpd
         #n = int(factor)
-        num = int((factor-n)*0xFFFFFFFF)
-        den = 0xFFFFFFFF
+        den = int(f);
+        den = math.gcd(int(f), int(fpd))
+        #while den > 0xFFFFFFFF:
+        #    den = den /10;
+        #den = int(den)
+        den = 280
+        print("denominator", den)
+        #den = 0xFFFFFFFF
+        num = int((factor-n)*den)
         #print("Factor", factor)
-        self.write(36, n);
-        self.write(38, den >> 16)
-        self.write(39, den & 0xFFFF)
-        self.write(42, num >> 16)
-        self.write(43, num & 0xFFFF)
-        self.write(0, self.read(0)|0x8)
+        self.writeRegister(36, n);
+        self.writeRegister(38, den >> 16)
+        self.writeRegister(39, den & 0xFFFF)
+        self.writeRegister(42, num >> 16)
+        self.writeRegister(43, num & 0xFFFF)
+        self.writeRegister(0, self.readRegister(0)|0x8)
 
         if chdiv is not None:
             if chdiv > 0:
@@ -338,48 +444,48 @@ class Lmx2594(ArduinoInterface):
             self.setField('CHDIV', chdiv)
             self.setField('OUTA_MUX', 0)
             self.setField('OUTB_MUX', 0)
-            factual=self.getFpd()*(n+num/float(den))/Lmx2594.chdivs[chdiv]
-            fvco=self.getFpd()*(n+num/float(den))
+            factual=mp.mpf(fpd)*(mp.mpf(n)+mp.mpf(num)/mp.mpf(den))/mp.mpf(Lmx2594.chdivs[chdiv])
+            fvco=fpd*(n+num/float(den))
         else:
             self.setField('OUTA_MUX', 1)
             self.setField('OUTB_MUX', 1)
-            factual=self.getFpd()*(n+num/float(den))
-            fvco=self.getFpd()*(n+num/float(den))
+            factual=mp.mpf(fpd)*(mp.mpf(n)+mp.mpf(num)/mp.mpf(den))
+            fvco=fpd*(n+num/float(den))
             #print("Actual frequency vco: ", self.getFpd()*(n+num/float(den)))
         self.setField('PFD_DLY_SEL', pfd_dly_sel)
         self.setField('FCAL_EN', 1)
         #print("VCO frequency", fvco, "Actual frequency", factual)
-        #print("Requested f:", f, "Actual f:", factual, "N:", n, "pfd_dly_sel:", pfd_dly_sel, "CHDIV:", chdiv, "factor:", factor)
+        print("Requested fvco:", f, "Actual fout(fvco/CHDIV):", factual, "N:", n, "pfd_dly_sel:", pfd_dly_sel, "CHDIV:", chdiv, "factor:", factor, "fpd", fpd)
         return factual, fvco, n
 
     def assignBit(self, ra, val, bit):
-        rv = self.read(ra)
+        rv = self.readRegister(ra)
         mask = list('1'*16)
         mask[15-bit]='0'
         #print(mask)
         bm = int(''.join(mask),2)
         #print("mask %x"%(bm))
         rv = rv&bm|(val<<bit)
-        self.write(ra, rv)
+        self.writeRegister(ra, rv)
 
 
     def setPower(self, level):
-        rv = self.read(44)
+        rv = self.readRegister(44)
         level = level&0x3F
         rv = (rv & 0xFF)|(level <<8)
-        self.write(44, rv)
+        self.writeRegister(44, rv)
 
     def setPowerB(self, level):
         self.assignBit(44, 0, 7)
-        rv = self.read(45);
+        rv = self.readRegister(45);
         rv = rv & 0xFFC0
         rv = rv | (level&0x3F) << 2;
-        self.write(45, rv)
+        self.writeRegister(45, rv)
 
-        rv = self.read(46);
+        rv = self.readRegister(46);
         rv = rv & 0xFFFC;
         rv = rv | 1;
-        self.write(46, rv)
+        self.writeRegister(46, rv)
 
 
     def getAllFieldNames(self):
@@ -421,7 +527,7 @@ class Lmx2594(ArduinoInterface):
 
     def getField(self, name):
         reg, fieldBits = self.findField(name);
-        vBits = self.toBinString(self.read(reg))
+        vBits = self.toBinString(self.readRegister(reg))
         bitString = self.extractIndices(vBits, fieldBits)
         #print("vbits", vBits)
         #print("bitstring", bitString)
@@ -431,41 +537,77 @@ class Lmx2594(ArduinoInterface):
         reg, fieldBits = self.findField(name)
         if len('{0:b}'.format(value)) > len(fieldBits):
             raise ValueError("Value %d is larger than what fits in %d bits"%(value, len(fieldBits)))
-        vBits = self.toBinString(self.read(reg))
+        vBits = self.toBinString(self.readRegister(reg))
         vBitsNew = self.insertIndices(vBits, self.toBinString(value), fieldBits)
         #print(vBits, vBitsNew)
-        self.write(reg, int(vBitsNew[::-1], 2))
+        self.writeRegister(reg, int(vBitsNew[::-1], 2))
 
 
 
 if __name__ == '__main__':
-    def getIndices(l, i):
-        o = ''
-        for j in i:
-            o+=l[j]
-        return o
+    import argparse
+    parser = argparse.ArgumentParser(prog="lmx2594.py", description="Program for controlling lmx2594 pll", epilog="Have fun!")
+    parser.add_argument("port", help='For instance /dev/ttyUSB0')
+    parser.add_argument('-f', '--frequency', help="Set frequency", type=float);
+    parser.add_argument('-r', '--reference', help="Reference frequency", type=float);
+    parser.add_argument('-m', '--macro', help="Record macro while setting frequency that will be executed at boot. This means that the device will set the specified frequency during power on even without a computer", action='store_true')
+    parser.add_argument('-l', '--locked', help="Check lock status", action='store_true');
+    args=parser.parse_args()
 
-    print("Creating LMX obect")
-    lmx = Lmx2594(sys.argv[1], fosc=280e6, mash_order=4)
-    lmx.enableLockDetect(True)
-    print("Is locked: ", lmx.isLocked())
-    if len(sys.argv)>=3:
-        pwr=32
-        if len(sys.argv)>= 4:
-            pwr=int(sys.argv[3])
-        lmx.setField('OUTA_PWR', pwr)
-        lmx.setField('OUTB_PWR', pwr)
-        lmx.setFrequency(float(sys.argv[2]))
-        input("press enter to quit")
-        quit()
 
-    freqRange = np.linspace(1.8, 15, 1001)[::-1]
-    pbar = tqdm.tqdm(freqRange)
-    for f in pbar:#np.linspace(1.7, 15, 501):
-        lmx.setFrequency(f*1e9)
-        #print("Is locked: ", lmx.isLocked())
-        pbar.set_description("frequency %f rb_LD_VTUNE"%(f)+str(lmx.getField("rb_LD_VTUNE")))
-        pbar.refresh()
-        lmx.enableLockDetect(True)
+    if len(sys.argv) < 2:
+        print("Specify serial port to use");
+        quit(0)
+
+    reference=280e6;
+    if args.reference:
+        reference=args.reference
+    d=Lmx2594(args.port, fosc=reference, macro=args.macro)
+    if args.frequency:
+        #d.setFrequency(args.frequency)
+        d.setFrequency2(args.frequency)
+    if args.locked:
+        import time
         time.sleep(1)
+        d.enableLockDetect(True)
+        print("Lock status is", d.locked())
+
+        #print("Lock status is", d.locked())
+    if args.macro:
+        print(d.macro(False).decode('ascii').strip())
+    input("press enter to continue");
+
+
+
+
+
+#    def getIndices(l, i):
+#        o = ''
+#        for j in i:
+#            o+=l[j]
+#        return o
+#
+#    print("Creating LMX obect")
+#    lmx = Lmx2594(sys.argv[1], fosc=280e6, mash_order=4)
+#    lmx.enableLockDetect(True)
+#    print("Is locked: ", lmx.isLocked())
+#    if len(sys.argv)>=3:
+#        pwr=32
+#        if len(sys.argv)>= 4:
+#            pwr=int(sys.argv[3])
+#        lmx.setField('OUTA_PWR', pwr)
+#        lmx.setField('OUTB_PWR', pwr)
+#        lmx.setFrequency(float(sys.argv[2]))
+#        input("press enter to exit")
+#        quit()
+
+#    freqRange = np.linspace(1.8, 15, 1001)[::-1]
+#    pbar = tqdm.tqdm(freqRange)
+#    for f in pbar:#np.linspace(1.7, 15, 501):
+#        lmx.setFrequency(f*1e9)
+#        #print("Is locked: ", lmx.isLocked())
+#        pbar.set_description("frequency %f rb_LD_VTUNE"%(f)+str(lmx.getField("rb_LD_VTUNE")))
+#        pbar.refresh()
+#        lmx.enableLockDetect(True)
+#        time.sleep(1)
 

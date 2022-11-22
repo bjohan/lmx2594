@@ -67,8 +67,9 @@ class ArduinoInterface:
         return o
 
     def read(self, ra):
-        if self.regShadow[0]&0x4:
-            self.write(0, self.regShadow[0]-0x4)
+        if 0 in self.regShadow:
+            if self.regShadow[0]&0x4:
+                self.write(0, self.regShadow[0]-0x4)
 
         cmd = b"r %d\r"%(ra)
         self.s.write(cmd)
@@ -161,9 +162,10 @@ class Lmx2594:
 
 
 
-    def __init__(self, interface, fosc=100e6):
-        self.iface = interface
+    def __init__(self, port, fosc=100e6):
+        #self.iface = interface
         #ArduinoInterface.__init__(self, port, 115200)
+        self.iface=ArduinoInterface(port, 115200)
         self.fosc=fosc
         print("Created LMX object wit fosc", fosc/1e6)
 
@@ -180,9 +182,9 @@ class Lmx2594:
 
     def enableLockDetect(self, state):
         if state:
-            self.iface.write(0, self.read(0)|0x4)
+            self.iface.write(0, self.iface.read(0)|0x4)
         else:
-            self.iface.write(0, self.read(0)&(0xFFFF-0x4))
+            self.iface.write(0, self.iface.read(0)&(0xFFFF-0x4))
 
 
     def readLockDetectStatus(self):
