@@ -274,7 +274,7 @@ void setup() {
 	//writeRegister(0, 0);
 	Serial.println("SPI RST DIS");
 	//init_registers();
-	//replayMacro();
+	replayMacro();
 	Serial.println("READY");
 	
 }
