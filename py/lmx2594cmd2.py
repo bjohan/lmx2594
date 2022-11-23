@@ -140,11 +140,11 @@ class Lmx2594():
         self.spiReset()
 
     def initialize(self):
-        print("Resetting LMX")
+        #print("Resetting LMX")
         #print(self.readRegister(9))
         self.reset()
         #print(self.readRegister(9))
-        print("Applying config")
+        #print("Applying config")
         self.applyConfig('10GOut320MRef.txt')
         self.writeRegister(0, 0)
         self.setupReferencePath()
@@ -158,7 +158,7 @@ class Lmx2594():
         #self.setFrequency(10e9)
         time.sleep(0.1)
         self.enableLockDetect(True)
-        print("Is locked: ", self.isLocked())
+        #print("Is locked: ", self.isLocked())
         
 
     def setupReferencePath(self):
@@ -173,7 +173,7 @@ class Lmx2594():
             div=int(ref/250.0e6+1)
         else: 
             div=1
-        print("PRE DIVIDER", div)
+        #print("PRE DIVIDER", div)
         self.setField('PLL_R_PRE', div)
         ref=ref/div
 
@@ -184,7 +184,7 @@ class Lmx2594():
         else:
             mul=1
 
-        print("REF MULT", mul)
+        #print("REF MULT", mul)
         self.setField('MULT', mul)
         ref=ref*mul
 
@@ -350,9 +350,9 @@ class Lmx2594():
         if minimumN > multFrac:
             raise ValueError("Unable to set frequency, required multiplier is less than than minimum n, try reducing mash_order or fpd")
 
-        print("Multiplication fraction", multFrac)
+        #print("Multiplication fraction", multFrac)
         fracfrac = multFrac-minimumN
-        print("Fractional fraction", fracfrac)
+        #print("Fractional fraction", fracfrac)
 
         n = minimumN
         num = fracfrac.numerator
@@ -415,7 +415,7 @@ class Lmx2594():
 
         fpd = self.getFpd();
         n, pfd_dly_sel = self.computeNAndPfdDlySel(f)
-        #print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
+        print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
         #print("phase detector frequency", self.getFpd()/1e6)
         factor = f/fpd
         #n = int(factor)
@@ -576,8 +576,8 @@ if __name__ == '__main__':
         d.setFrequency2(args.frequency)
     if args.locked:
         import time
-        time.sleep(1)
         d.enableLockDetect(True)
+        time.sleep(1)
         print("Lock status is", d.locked())
 
         #print("Lock status is", d.locked())
