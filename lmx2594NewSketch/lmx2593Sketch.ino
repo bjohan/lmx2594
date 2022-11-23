@@ -132,7 +132,7 @@ uint8_t macroPosition=0;
 
 
 
-uint16_t default_regmap[] {
+const PROGMEM uint16_t default_regmap[] {
 	REGISTER_R0, REGISTER_R1, REGISTER_R2, REGISTER_R3, REGISTER_R4, REGISTER_R5, REGISTER_R6, REGISTER_R7, 
 	REGISTER_R8, REGISTER_R9, REGISTER_R10, REGISTER_R11, REGISTER_R12, REGISTER_R13, REGISTER_R14, REGISTER_R15,
 	REGISTER_R16, REGISTER_R17, REGISTER_R18 ,REGISTER_R19, REGISTER_R20, REGISTER_R21, REGISTER_R22, REGISTER_R23,
@@ -269,12 +269,12 @@ void setup() {
 	digitalWrite(CE, HIGH);
 	delay(50);
 	Serial.println("SPI RST");
-	writeRegister(0, 2);
-	delay(100);
-	writeRegister(0, 0);
+	//writeRegister(0, 2);
+	//delay(100);
+	//writeRegister(0, 0);
 	Serial.println("SPI RST DIS");
-	init_registers();
-	replayMacro();
+	//init_registers();
+	//replayMacro();
 	Serial.println("READY");
 	
 }
