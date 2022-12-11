@@ -4,3 +4,6 @@
 [submodule "meas/gpib_instrument_control"]
 	path = meas/gpib_instrument_control
 	url = https://github.com/bjohan/gpib_instrument_control.git
+[submodule "meas/lmx2594"]
+	path = meas/lmx2594
+	url = https://github.com/bjohan/lmx2594.git
