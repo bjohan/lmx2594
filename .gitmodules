@@ -1,5 +1,5 @@
 [submodule "py/gpib_instrument_control"]
-	path = py/gpib_instrument_control
+	path = py/hw_verification_testing/gpib_instrument_control
 	url = https://github.com/bjohan/gpib_instrument_control.git
 [submodule "meas/gpib_instrument_control"]
 	path = meas/gpib_instrument_control
