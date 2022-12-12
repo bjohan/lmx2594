@@ -7,3 +7,6 @@
 [submodule "meas/lmx2594"]
 	path = meas/lmx2594
 	url = https://github.com/bjohan/lmx2594.git
+[submodule "meas/yig_filter_bank_controller"]
+	path = meas/yig_filter_bank_controller
+	url = https://github.com/bjohan/yig_filter_bank_controller.git
