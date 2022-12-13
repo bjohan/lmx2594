@@ -10,3 +10,6 @@
 [submodule "meas/yig_filter_bank_controller"]
 	path = meas/yig_filter_bank_controller
 	url = https://github.com/bjohan/yig_filter_bank_controller.git
+[submodule "meas/data"]
+	path = meas/data
+	url = https://github.com/bjohan/data.git
