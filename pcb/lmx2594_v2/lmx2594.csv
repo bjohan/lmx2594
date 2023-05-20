@@ -1,36 +1,139 @@
-Id,Designator,Package,Quantity,Designation,Supplier and ref
-1,U5,SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm,1,ADP7158,MOUSER
-2,"D1,D2,D3",LED_0805_HandSoldering,3,LED,MOUSER
-3,J3,Molex_KK-6410-13_13x2.54mm_Straight,1,Conn_01x13_Male,HEMMA
-4,"L1,L5",Neosid_Inductor_Ms95,2,33u,HEMMA
-5,L3,Neosid_Inductor_Ms95,1,33uH,HEMMA
-6,U1,TO-220,1,LM7809_TO220,MOUSER
-7,U3,Texas_PVQFN-N40,1,lmx254,MOUSER
-8,"C2,C3,C6,C8,C14,C40,C41,C42,C43,C9,C11,C12,C59",C_0603,13,100n,MOUSER
-9,C19,C_0603,1,100 n,MOUSER
-10,"C21,C22,C23,C24,C25,C32,C35,C38,C16,C45,C44",C_0603,11,1u,MOUSER
-11,C28,C_0603,1,1.8n,MOUSER
-12,C29,C_0603,1,0p,EJ
-13,C30,C_0603,1,68n,MOUSER
-14,C31,C_0603,1,390,MOUSER
-15,"C34,C36,C37,C39",C_0603,4,10u,MOUSER
-16,"R1,R2,R6,R7,R10,R15,R24,R25,R26,R27",C_0603,10,0,MOUSER
-17,"R4,R9",C_0603,2,150,MOUER
-18,R5,C_0603,1,1k,MOUSER
-19,R14,C_0603,1,18,MOUSER
-20,"R17,R28,R29",C_0603,3,68,MOUSER
-21,R21,C_0603,1,100,MOUSER
-22,"R3,R8",C_0603,2,50,MOUSER
-23,R23,C_0603,1,10K,MOUSER
-24,"C17,C20,C51,C53",C_0402,4,10p,MOUSER
-25,"C18,C26,C27,C50,C52,C56,C57,C33",C_0402,8,100n,MOUSER
-26,C46,C_1210_HandSoldering,1,10u-1000u,MOUSER
-27,"L2,L4",C_0402,2,10nH,MOUSER
-28,"L7,L8",C_0402,2,18n,MOUSER
-29,"R11,R12,R13,R16,R18,R19,R20,R22",R_0402,8,50,MOUSER
-30,U2,Oscillator_SMD_Fordahl_DFAS1-6pin_14.8x9.1mm,1,VS_500,HEMMA
-31,U4,TO-220,1,L7805,MOUSER
-32,"U6,U7",DFN-6-1EP_2x2mm_Pitch0.5mm,2,GRF3042,MOUSER
-33,"J1,J2,J4,J5,J7,J9",sma_endlaunch,6,Conn_Coaxial,HEMMA
-34,"C55,C58",C_0402,2,100p,HEMMA
-35,"C1,C4,C5,C13,C7,C10,C15",C_1210,7,10u,MOUSER
+"Source:","/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"
+"Date:","ons  3 maj 2023 20:54:47"
+"Tool:","Eeschema 6.0.2+dfsg-1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py"
+"Component Count:","108"
+
+"Individual Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet"
+"","","C1","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C2","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C3","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C4","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C5","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C6","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C7","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C8","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C9","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C10","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C11","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C12","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C13","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C14","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C15","10u","Device:C","Capacitors_SMD:C_1210","~"
+"","","C16","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C17","10p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C18","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C19","100 n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C20","10p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C21","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C22","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C23","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C24","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C25","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C26","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C27","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C28","1.8n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C29","0p","Device:C","Capacitors_SMD:C_0603","~"
+"","","C30","68n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C31","390","Device:C","Capacitors_SMD:C_0603","~"
+"","","C32","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C33","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C34","10u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C35","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C36","10u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C37","10u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C38","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C39","10u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C40","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C41","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C42","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C43","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","C44","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C45","1u","Device:C","Capacitors_SMD:C_0603","~"
+"","","C46","10u-1000u","Device:C","Capacitors_SMD:C_1210_HandSoldering","~"
+"","","C50","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C51","10p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C52","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C53","10p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C55","100p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C56","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C57","100n","Device:C","Capacitors_SMD:C_0402","~"
+"","","C58","100p","Device:C","Capacitors_SMD:C_0402","~"
+"","","C59","100n","Device:C","Capacitors_SMD:C_0603","~"
+"","","D1","LED","Device:LED","LEDs:LED_0805_HandSoldering","~"
+"","","D2","LED","Device:LED","LEDs:LED_0805_HandSoldering","~"
+"","","D3","LED","Device:LED","LEDs:LED_0805_HandSoldering","~"
+"","","J1","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","J2","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","J3","Conn_01x13_Male","Connector:Conn_01x13_Male","Connectors_Molex:Molex_KK-6410-13_13x2.54mm_Straight","~"
+"","","J4","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","J5","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","J7","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","J9","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"","","L1","33u","Device:L_Core_Ferrite","Inductors_NEOSID:Neosid_Inductor_Ms95",""
+"","","L2","10nH","Device:L_Core_Ferrite","Capacitors_SMD:C_0402",""
+"","","L3","33uH","Device:L_Core_Ferrite","Inductors_NEOSID:Neosid_Inductor_Ms95",""
+"","","L4","10nH","Device:L_Core_Ferrite","Capacitors_SMD:C_0402",""
+"","","L5","33u","Device:L_Core_Ferrite","Inductors_NEOSID:Neosid_Inductor_Ms95",""
+"","","L7","18n","Device:L","Capacitors_SMD:C_0402","~"
+"","","L8","18n","Device:L","Capacitors_SMD:C_0402","~"
+"","","R1","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R2","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R3","50","Device:R","Capacitors_SMD:C_0603","~"
+"","","R4","150","Device:R","Capacitors_SMD:C_0603","~"
+"","","R5","1k","Device:R","Capacitors_SMD:C_0603","~"
+"","","R6","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R7","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R8","50","Device:R","Capacitors_SMD:C_0603","~"
+"","","R9","150","Device:R","Capacitors_SMD:C_0603","~"
+"","","R10","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R11","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R12","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R13","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R14","18","Device:R","Capacitors_SMD:C_0603","~"
+"","","R15","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R16","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R17","68","Device:R","Capacitors_SMD:C_0603","~"
+"","","R18","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R19","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R20","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R21","100","Device:R","Capacitors_SMD:C_0603","~"
+"","","R22","50","Device:R","Resistors_SMD:R_0402","~"
+"","","R23","10K","Device:R","Capacitors_SMD:C_0603","~"
+"","","R24","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R25","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R26","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R27","0","Device:R","Capacitors_SMD:C_0603","~"
+"","","R28","68","Device:R","Capacitors_SMD:C_0603","~"
+"","","R29","68","Device:R","Capacitors_SMD:C_0603","~"
+"","","U1","LM7809_TO220","Regulator_Linear:LM7809_TO220","Package_TO_SOT_THT:TO-220-3_Vertical","http://www.fairchildsemi.com/ds/LM/LM7805.pdf"
+"","","U2","VS_500","vs_500:VS_500","Oscillators:Oscillator_SMD_Fordahl_DFAS1-6pin_14.8x9.1mm",""
+"","","U3","lmx254","lmx2594:lmx254","Housings_DFN_QFN:Texas_PVQFN-N40",""
+"","","U4","L7805","Regulator_Linear:L7805","Power_Integrations:TO-220","http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf"
+"","","U5","ADP7158","adp7158:ADP7158","Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm",""
+"","","U6","GRF3042","grf_3042:GRF3042","Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.5mm",""
+"","","U7","GRF3042","grf_3042:GRF3042","Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.5mm",""
+
+
+
+"Collated Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet"
+"1","7","C1, C4, C5, C7, C10, C13, C15","10u","Device:C","Capacitors_SMD:C_1210","~"
+"2","13","C2, C3, C6, C8, C9, C11, C12, C14, C40, C41, C42, C43, C59","100n","Device:C","Capacitors_SMD:C_0603","~"
+"3","11","C16, C21, C22, C23, C24, C25, C32, C35, C38, C44, C45","1u","Device:C","Capacitors_SMD:C_0603","~"
+"4","4","C17, C20, C51, C53","10p","Device:C","Capacitors_SMD:C_0402","~"
+"5","8","C18, C26, C27, C33, C50, C52, C56, C57","100n","Device:C","Capacitors_SMD:C_0402","~"
+"6","1","C19","100 n","Device:C","Capacitors_SMD:C_0603","~"
+"7","1","C28","1.8n","Device:C","Capacitors_SMD:C_0603","~"
+"8","1","C29","0p","Device:C","Capacitors_SMD:C_0603","~"
+"9","1","C30","68n","Device:C","Capacitors_SMD:C_0603","~"
+"10","1","C31","390","Device:C","Capacitors_SMD:C_0603","~"
+"11","4","C34, C36, C37, C39","10u","Device:C","Capacitors_SMD:C_0603","~"
+"12","1","C46","10u-1000u","Device:C","Capacitors_SMD:C_1210_HandSoldering","~"
+"13","2","C55, C58","100p","Device:C","Capacitors_SMD:C_0402","~"
+"14","3","D1, D2, D3","LED","Device:LED","LEDs:LED_0805_HandSoldering","~"
+"15","6","J1, J2, J4, J5, J7, J9","Conn_Coaxial","Connector:Conn_Coaxial","sch:sma_endlaunch"," ~"
+"16","1","J3","Conn_01x13_Male","Connector:Conn_01x13_Male","Connectors_Molex:Molex_KK-6410-13_13x2.54mm_Straight","~"
