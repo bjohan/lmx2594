@@ -407,15 +407,15 @@ class Lmx2594():
         #F_vco = fpdX(N+NUM/DEN)
 
         chdiv, f = self.computeChDivAndVcoFrequency(f)
-        if chdiv is not None:
-            print("CHDIV", chdiv, f, self.chdivs[chdiv])
+        #if chdiv is not None:
+        #    print("CHDIV", chdiv, f, self.chdivs[chdiv])
         if chdiv is not None:
             if Lmx2594.chdivs[chdiv] > 6 and f > 11.5e9:
                 raise Exception("chdiv > 6 and fvco > 11.5e9, chdiv is", Lmx2594.chdivs[chdiv], "and fvco is", f)
 
         fpd = self.getFpd();
         n, pfd_dly_sel = self.computeNAndPfdDlySel(f)
-        print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
+        #print("N", n, "PFD_DLY_SEL", pfd_dly_sel)
         #print("phase detector frequency", self.getFpd()/1e6)
         factor = f/fpd
         #n = int(factor)
@@ -425,7 +425,7 @@ class Lmx2594():
         #    den = den /10;
         #den = int(den)
         den = 280
-        print("denominator", den)
+        #print("denominator", den)
         #den = 0xFFFFFFFF
         num = int((factor-n)*den)
         #print("Factor", factor)
@@ -455,7 +455,7 @@ class Lmx2594():
         self.setField('PFD_DLY_SEL', pfd_dly_sel)
         self.setField('FCAL_EN', 1)
         #print("VCO frequency", fvco, "Actual frequency", factual)
-        print("Requested fvco:", f, "Actual fout(fvco/CHDIV):", factual, "N:", n, "pfd_dly_sel:", pfd_dly_sel, "CHDIV:", chdiv, "factor:", factor, "fpd", fpd)
+        #print("Requested fvco:", f, "Actual fout(fvco/CHDIV):", factual, "N:", n, "pfd_dly_sel:", pfd_dly_sel, "CHDIV:", chdiv, "factor:", factor, "fpd", fpd)
         return factual, fvco, n
 
     def assignBit(self, ra, val, bit):
@@ -479,7 +479,7 @@ class Lmx2594():
         self.assignBit(44, 0, 7)
         rv = self.readRegister(45);
         rv = rv & 0xFFC0
-        rv = rv | (level&0x3F) << 2;
+        rv = rv | (level&0x3F)# << 2;
         self.writeRegister(45, rv)
 
         rv = self.readRegister(46);
