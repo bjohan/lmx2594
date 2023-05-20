@@ -8,6 +8,7 @@ import mpmath as mp
 import math 
 import fractions
 mp.mp.dps=100
+import default_config
 
 class Lmx2594():
     
@@ -145,7 +146,8 @@ class Lmx2594():
         self.reset()
         #print(self.readRegister(9))
         #print("Applying config")
-        self.applyConfig('10GOut320MRef.txt')
+        #self.applyConfig('10GOut320MRef.txt')
+        self.applyDefaultConfig()
         self.writeRegister(0, 0)
         self.setupReferencePath()
         self.setField('OUTB_PD', 0)
@@ -208,6 +210,11 @@ class Lmx2594():
             a = int(r[0:2],16)
             v = int(r[2:], 16)
             self.writeRegister(a, v)
+
+    def applyDefaultConfig(self):
+        addrs = default_config.conf.keys();
+        for a in addrs:
+            self.writeRegister(a, default_config.conf[a])
 
     def enableLockDetect(self, state):
         if state:
