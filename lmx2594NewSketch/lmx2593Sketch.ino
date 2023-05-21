@@ -261,6 +261,10 @@ void setup() {
 	pinMode(RAMPDIR, OUTPUT);
 	pinMode(CE, OUTPUT);
 	pinMode(SYNC, OUTPUT);
+	pinMode(A0, OUTPUT);
+	pinMode(A1, OUTPUT);
+	pinMode(A2, OUTPUT);
+	pinMode(A3, OUTPUT);
 	digitalWrite(CSB, HIGH);
 	Serial.println("CE LOW");
 	digitalWrite(CE, LOW);
@@ -279,76 +283,6 @@ void setup() {
 	
 }
 
-
-
-/*void parseCommand(char *cmdStr){
-	uint16_t argv[8];
-	char c;
-	char num[8];
-	char cmd;
-	uint8_t np = 0;
-
-	uint8_t carg = 0;
-	//Serial.print("Parsing: ");
-	//Serial.println(cmdStr);
-
-	cmd = cmdStr[0];
-	//Serial.print("command: ");
-	//Serial.println(cmd);
-
-	for(int i = 2 ; i <= strlen(cmdStr) ; i++){
-		c = cmdStr[i];
-		if(c >= '0' && c<='9') num[np++] = c;
-		if(c == ' ' ||  c =='\0') {
-			if(np >= 1){
-				num[np]='\0';
-				argv[carg] = atoi(num);
-				//Serial.print("Arg: ");
-				//Serial.println(argv[carg]);
-				carg++;
-			}
-			np = 0;
-
-		}
-	}
-
-	//Serial.print("Num arguments parsed: ");
-	//Serial.println(carg);
-	
-	switch(cmd){
-		case 'w':
-			if(carg == 2){
-				writeRegister(argv[0], argv[1]);
-				Serial.print("Wrote: ");Serial.print(argv[1]);Serial.print(" to register: ");Serial.println(argv[0]);
-			} else {
-				Serial.println("ERROR: w Write, takes 2 arguments, address and data");
-			}
-		break;
-		case 'r':
-			if(carg == 1){
-				Serial.print("Read: "); Serial.print(readRegister(argv[0])); Serial.print(" From register address: "); Serial.println(argv[0]);
-			} else {
-				Serial.println("ERROR: r Read, takes 1 argument, address");
-			}
-		break;
-		case 'c':
-			if(carg == 1){
-				if(argv[0] == 1) digitalWrite(CE, HIGH);
-				else digitalWrite(CE, LOW);
-				Serial.print("Set CE pin to: "); Serial.println(argv[0]==1);
-			} else {
-				Serial.println("c CE, takes 1 argument, pin state");
-			}
-		break;
-		default:
-			Serial.print(cmd);Serial.println(" is an unknown command");
-	}
-}
-*/
-
-
-
-
 uint8_t copyTok(char *dst, char *src, int8_t n){
 	for(;*src!='\0'; src++){
 		if(*src == ' ') n--;
@@ -366,7 +300,7 @@ void commandWriteRegister(char *cmdstr){
 	uint32_t sw;
 	uint32_t addr;
 	uint32_t value;	
-	char tokbuf[16];
+	char tokbuf[32];
 	if(copyTok(tokbuf, cmdstr, 1)){
 		Serial.println("First argument must be address");
 	}
@@ -395,7 +329,7 @@ void commandWriteRegister(char *cmdstr){
 
 void commandReadRegister(char *cmdstr){
 	uint32_t addr;
-	char tokbuf[16];
+	char tokbuf[32];
 	if(copyTok(tokbuf, cmdstr, 1)){
 		Serial.println("First argument must be address");
 	}
@@ -405,7 +339,7 @@ void commandReadRegister(char *cmdstr){
 
 void commandEnable(char *cmdstr){
 	uint8_t enable;
-	char tokbuf[16];
+	char tokbuf[32];
 	if(copyTok(tokbuf, cmdstr, 1)){
 		Serial.println("Firt argument must be 0 to disable or nonzero to enable");
 	}
@@ -423,7 +357,7 @@ void commandEnable(char *cmdstr){
 
 void commandMacroRecord(char *cmdstr){
 	uint8_t enable;
-	char tokbuf[16];
+	char tokbuf[32];
 	if(copyTok(tokbuf, cmdstr, 1)){
 		Serial.println("First argument must be 0 to finish recording or nonzero to start");
 	}
@@ -470,9 +404,22 @@ void commandOutput(char *cmdstr){
 	Serial.print("PLL Output ");
 	Serial.println(digitalRead(MUX));
 }
+void commandGpio(char *cmdstr){
+	uint8_t p;
+	char tokbuf[32];
+	if(copyTok(tokbuf, cmdstr, 1)){
+		Serial.println("First argument must be decimal number representing the bit pattern to be output");
+	}
+	p=atoi(tokbuf);
+	digitalWrite(A0, p&0x01);
+	digitalWrite(A1, p&0x02);
+	digitalWrite(A2, p&0x04);
+	digitalWrite(A3, p&0x08);
+}
+
 
 void executeCommand(char* cmdstr){
-	char tokbuf[16];
+	char tokbuf[32];
 	if(copyTok(tokbuf, cmdstr, 0) == 0){
 		switch(tokbuf[0]){
 			case 'W':
@@ -503,6 +450,10 @@ void executeCommand(char* cmdstr){
 			case 'o':
 				commandOutput(cmdstr);
 				break;
+			case 'G':
+			case 'g':
+				commandGpio(cmdstr);
+				break;
 			default:
 				Serial.print("Unrecognized command ");
 				Serial.println(cmdstr);
@@ -519,7 +470,7 @@ void executeCommand(char* cmdstr){
 
 void loop() {
 	char d;
-	static char cmd[16];
+	static char cmd[32];
 	static uint8_t cp=0;
 	if(Serial.available()){
 		d=Serial.read();
@@ -537,45 +488,4 @@ void loop() {
 			} 
 		}
 	}
-
-
-	/*static char cmdStr[32];
-	static uint8_t p = 0;
-	char c;
-
-	if(Serial.available()){
-		if(p == 31) p = 0;
-	
-		c = Serial.read();
-		//Serial.println((int)c);
-		if(c == 13){
-			//Serial.println("");
-			//Serial.println("");
-			cmdStr[p] = '\0';
-			parseCommand(cmdStr);
-			p=0;
-		} else {
-			//Serial.print(c);
-			cmdStr[p++] = c;
-		}
-	}*/
-	/*Serial.println("Reading");
-	for(int i = 0 ; i <= 112 ; i++){
-	delay(100);
-		Serial.println(readRegister(i));
-	}*/
-	/*delay(2000);
-	Serial.println("LOOP SPI RST");
-	writeRegister(0, 2);
-	delay(2000);
-	writeRegister(0, 0);
-	Serial.println("LOOP SPI RST DIS");
-	Serial.println("PWR_DN");
-	writeRegister(0, 1);
-	delay(2000);
-	//sendWord(0xAAAAAAAA);
-	Serial.println(readRegister(0));
-	Serial.println("PWR_EN");
-	writeRegister(0, 0);
-	delay(2000);*/
 }
