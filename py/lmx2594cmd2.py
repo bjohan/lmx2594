@@ -351,7 +351,7 @@ class Lmx2594():
 
         minimumN, pfd_dly_sel = self.getMinimumNAndPfdDlySel(fvco, mash_order)
 
-        print("Determined fvco", fvco, "chdiv", chdiv)
+        #print("Determined fvco", fvco, "chdiv", chdiv)
         multFrac = fractions.Fraction(int(fvco), int(fpd));
 
         if minimumN > multFrac:
@@ -397,12 +397,16 @@ class Lmx2594():
             self.setField('CHDIV', chdiv)
             self.setField('OUTA_MUX', 0)
             self.setField('OUTB_MUX', 0)
+        else:
+            self.setField('OUTA_MUX', 1)
+            self.setField('OUTB_MUX', 1)
+            
            
-        print("N", n, "num", num, "den", den)
+        #print("N", n, "num", num, "den", den)
         factual=mp.mpf(fpd)*(mp.mpf(n)+mp.mpf(num)/mp.mpf(den))
-        print("Actual vco frequency", factual)
-        if chdiv is not None:
-            print("Output frequency", factual/self.chdivs[chdiv], self.chdivs[chdiv])
+        #print("Actual vco frequency", factual)
+        #if chdiv is not None:
+        #    print("Output frequency", factual/self.chdivs[chdiv], self.chdivs[chdiv])
 
 
 
