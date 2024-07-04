@@ -7,7 +7,7 @@ Current version of PCB in pcb/lmx2594_v2/
 # Arduino sketch
 In lmx2594NewSketch/
 
-#Python library commandline tool
+# Python library commandline tool
 In py/ 
 ```
 /lmx2594cmd2.py --help
@@ -34,12 +34,14 @@ Have fun!
 ```
 
 Example:
+
 Program arduino so it always starts at 1296MHz with 10MHz reference
 ```
 ./lmx2594cmd2.py /dev/ttyUSB0 -r 10e6 -f 1296e6 -m
 ```
 
 Example:
+
 Set the frequency to 144MHz with 10MHz reference
 ```
 ./lmx2594cmd2.py /dev/ttyUSB0 -r 10e6 -f 144e6
