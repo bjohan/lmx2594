@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<export version="D">
+<export version="E">
   <design>
-    <source>/home/bjohan/git_wd/lmx2594/pcb/lmx2594/lmx2594.sch</source>
-    <date>lör 11 jan 2020 16:36:17</date>
-    <tool>Eeschema 5.0.2-bee76a0~70~ubuntu18.04.1</tool>
+    <source>/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch</source>
+    <date>lör 23 nov 2024 11:15:43</date>
+    <tool>Eeschema 7.0.11+dfsg-1build4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -15,735 +15,1193 @@
         <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
       </title_block>
     </sheet>
   </design>
   <components>
-    <comp ref="U2">
-      <value>TPS62150</value>
-      <footprint>Housings_DFN_QFN:QFN-16-1EP_3x3mm_Pitch0.5mm_ThermalVias</footprint>
-      <datasheet>http://www.ti.com/lit/ds/symlink/TPS62150.pdf</datasheet>
-      <libsource lib="Regulator_Switching" part="TPS62150" description="1A Step-Down Converter with DCS-Control, Adjustable Output Voltage, 3-17V Input Voltage, QFN-16"/>
+    <comp ref="C1">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD4F89</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005cee8a62</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cee8994</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cee88e6</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cee881a</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd1aa26</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd1aaf0</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd46262</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd46268</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ef9e055</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0ee319</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0ee311</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0ee309</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd4626e</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd46274</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_1210</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0ee301</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005eee79f6</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>10p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6da9</tstamps>
+    </comp>
+    <comp ref="C18">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6ff2</tstamps>
+    </comp>
+    <comp ref="C19">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7d24</tstamps>
+    </comp>
+    <comp ref="C20">
+      <value>10p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6e41</tstamps>
+    </comp>
+    <comp ref="C21">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7dae</tstamps>
+    </comp>
+    <comp ref="C22">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7e18</tstamps>
+    </comp>
+    <comp ref="C23">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7e7e</tstamps>
+    </comp>
+    <comp ref="C24">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7ef0</tstamps>
+    </comp>
+    <comp ref="C25">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7f56</tstamps>
+    </comp>
+    <comp ref="C26">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11f9d</tstamps>
+    </comp>
+    <comp ref="C27">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11faf</tstamps>
+    </comp>
+    <comp ref="C28">
+      <value>1.8n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce40fcc</tstamps>
+    </comp>
+    <comp ref="C29">
+      <value>0p</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce411b1</tstamps>
+    </comp>
+    <comp ref="C30">
+      <value>68n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce41301</tstamps>
+    </comp>
+    <comp ref="C31">
+      <value>390p</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce413ad</tstamps>
+    </comp>
+    <comp ref="C32">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd79ab</tstamps>
+    </comp>
+    <comp ref="C33">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11fa3</tstamps>
+    </comp>
+    <comp ref="C34">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7a66</tstamps>
+    </comp>
+    <comp ref="C35">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7ab4</tstamps>
+    </comp>
+    <comp ref="C36">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7b0c</tstamps>
+    </comp>
+    <comp ref="C37">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7cf2</tstamps>
+    </comp>
+    <comp ref="C38">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7cf8</tstamps>
+    </comp>
+    <comp ref="C39">
+      <value>10u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7cfe</tstamps>
+    </comp>
+    <comp ref="C40">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd73ff</tstamps>
+    </comp>
+    <comp ref="C41">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd75b3</tstamps>
+    </comp>
+    <comp ref="C42">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7493</tstamps>
+    </comp>
+    <comp ref="C43">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7601</tstamps>
+    </comp>
+    <comp ref="C44">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005eecdf56</tstamps>
+    </comp>
+    <comp ref="C45">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ef46641</tstamps>
+    </comp>
+    <comp ref="C46">
+      <value>10u-1000u</value>
+      <footprint>Capacitors_SMD:C_1210_HandSoldering</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ef62d54</tstamps>
+    </comp>
+    <comp ref="C50">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0dc2ff</tstamps>
+    </comp>
+    <comp ref="C51">
+      <value>10p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0dc129</tstamps>
+    </comp>
+    <comp ref="C52">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f338cce</tstamps>
+    </comp>
+    <comp ref="C53">
+      <value>10p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f338cc8</tstamps>
+    </comp>
+    <comp ref="C55">
+      <value>100p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f4dc26c</tstamps>
+    </comp>
+    <comp ref="C56">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f53f2e7</tstamps>
+    </comp>
+    <comp ref="C57">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f53f491</tstamps>
+    </comp>
+    <comp ref="C58">
+      <value>100p</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f50d07d</tstamps>
+    </comp>
+    <comp ref="C59">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005efd415a</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <footprint>LEDs:LED_0805_HandSoldering</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Light emitting diode"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce96aaa</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>LED</value>
+      <footprint>LEDs:LED_0805_HandSoldering</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Light emitting diode"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cf54c78</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>LED</value>
+      <footprint>LEDs:LED_0805_HandSoldering</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Light emitting diode"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cf5fae3</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6b5a</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6b60</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x13_Male</value>
+      <footprint>Connectors_Molex:Molex_KK-6410-13_13x2.54mm_Straight</footprint>
+      <libsource lib="lmx2594-rescue" part="Conn_01x13_Male-Connector" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cfc505a</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11f91</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11f97</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6c58</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>Conn_Coaxial</value>
+      <footprint>sch:sma_endlaunch</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
+      <property name="ki_keywords" value="BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6c5e</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>33u</value>
+      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
+      <libsource lib="lmx2594-rescue" part="L_Core_Ferrite-Device" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd4a387</tstamps>
+    </comp>
+    <comp ref="L2">
+      <value>10n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="lmx2594-rescue" part="L_Core_Ferrite-Device" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0dbeff</tstamps>
+    </comp>
+    <comp ref="L3">
+      <value>33u</value>
+      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
+      <libsource lib="lmx2594-rescue" part="L_Core_Ferrite-Device" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd1a974</tstamps>
+    </comp>
+    <comp ref="L4">
+      <value>10n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="lmx2594-rescue" part="L_Core_Ferrite-Device" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f338cc2</tstamps>
+    </comp>
+    <comp ref="L5">
+      <value>33u</value>
+      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
+      <libsource lib="lmx2594-rescue" part="L_Core_Ferrite-Device" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd4a2c7</tstamps>
+    </comp>
+    <comp ref="L7">
+      <value>18n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Inductor"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd6f44</tstamps>
+    </comp>
+    <comp ref="L8">
+      <value>18n</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Inductor"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11fa9</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005d149b9c</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd46256</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>50</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd047d2</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>150</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce9684b</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>1k</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cf54c71</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005efbc0ac</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd4625c</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>50</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd0456c</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>150</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cf5fadc</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f03ad3b</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd70df</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd7157</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11fb5</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>18</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce410cc</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce41251</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce11fbb</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>68</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ce41455</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0091a1</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f009466</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f009293</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>100</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ccd74e9</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>50</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f009574</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>10K</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cd25bc9</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f03aeb6</tstamps>
+    </comp>
+    <comp ref="R25">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cfbe008</tstamps>
+    </comp>
+    <comp ref="R26">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005cfbe134</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>0</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ef1c5f5</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>68</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f0dc3e1</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>68</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f338cd4</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>LM7809_TO220</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <datasheet>http://www.fairchildsemi.com/ds/LM/LM7805.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="LM7809_TO220" description="Positive 1A 35V Linear Regulator, Fixed Output 9V, TO-220"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Positive 1A 35V Linear Regulator, Fixed Output 9V, TO-220"/>
+      <property name="ki_keywords" value="Voltage Regulator 1A Positive"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005f114de0</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>VS_500</value>
+      <footprint>Oscillators:Oscillator_SMD_Fordahl_DFAS1-6pin_14.8x9.1mm</footprint>
+      <libsource lib="vs_500" part="VS_500" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00005ef9dc26</tstamps>
     </comp>
     <comp ref="U3">
       <value>lmx254</value>
       <footprint>Housings_DFN_QFN:Texas_PVQFN-N40</footprint>
       <libsource lib="lmx2594" part="lmx254" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD68FA</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005ccd68fa</tstamps>
     </comp>
-    <comp ref="J1">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6B5A</tstamp>
-    </comp>
-    <comp ref="J2">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6B60</tstamp>
-    </comp>
-    <comp ref="J7">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6C58</tstamp>
-    </comp>
-    <comp ref="J9">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6C5E</tstamp>
-    </comp>
-    <comp ref="C17">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6DA9</tstamp>
-    </comp>
-    <comp ref="C20">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6E41</tstamp>
-    </comp>
-    <comp ref="L7">
-      <value>18n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L" description="Inductor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6F44</tstamp>
-    </comp>
-    <comp ref="C18">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD6FF2</tstamp>
-    </comp>
-    <comp ref="R11">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD70DF</tstamp>
-    </comp>
-    <comp ref="R12">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7157</tstamp>
-    </comp>
-    <comp ref="C40">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD73FF</tstamp>
-    </comp>
-    <comp ref="C42">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7493</tstamp>
-    </comp>
-    <comp ref="R21">
-      <value>100</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD74E9</tstamp>
-    </comp>
-    <comp ref="C41">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD75B3</tstamp>
-    </comp>
-    <comp ref="C43">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7601</tstamp>
-    </comp>
-    <comp ref="C32">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD79AB</tstamp>
-    </comp>
-    <comp ref="C34">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7A66</tstamp>
-    </comp>
-    <comp ref="C35">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7AB4</tstamp>
-    </comp>
-    <comp ref="C36">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7B0C</tstamp>
-    </comp>
-    <comp ref="C37">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7CF2</tstamp>
-    </comp>
-    <comp ref="C38">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7CF8</tstamp>
-    </comp>
-    <comp ref="C39">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7CFE</tstamp>
-    </comp>
-    <comp ref="C19">
-      <value>100 n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7D24</tstamp>
-    </comp>
-    <comp ref="C21">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7DAE</tstamp>
-    </comp>
-    <comp ref="C22">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7E18</tstamp>
-    </comp>
-    <comp ref="C23">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7E7E</tstamp>
-    </comp>
-    <comp ref="C24">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7EF0</tstamp>
-    </comp>
-    <comp ref="C25">
-      <value>1u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCD7F56</tstamp>
-    </comp>
-    <comp ref="L4">
-      <value>XFL4020-222MEB</value>
-      <footprint>Inductors:Inductor_Wurth_MAPI-4020</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L_Core_Ferrite" description="Inductor with ferrite core"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCF179C</tstamp>
-    </comp>
-    <comp ref="C12">
-      <value>22u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCF18F2</tstamp>
-    </comp>
-    <comp ref="R6">
-      <value>562K</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCF1EA0</tstamp>
-    </comp>
-    <comp ref="R10">
-      <value>180K</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CCF80F1</tstamp>
-    </comp>
-    <comp ref="C11">
-      <value>3.3n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD1322D</tstamp>
-    </comp>
-    <comp ref="C5">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_1210_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD1AA26</tstamp>
-    </comp>
-    <comp ref="C6">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD1AAF0</tstamp>
-    </comp>
-    <comp ref="R2">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD46256</tstamp>
-    </comp>
-    <comp ref="R7">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD4625C</tstamp>
-    </comp>
-    <comp ref="C7">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD46262</tstamp>
-    </comp>
-    <comp ref="C8">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD46268</tstamp>
-    </comp>
-    <comp ref="C13">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD4626E</tstamp>
-    </comp>
-    <comp ref="C14">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD46274</tstamp>
-    </comp>
-    <comp ref="L5">
-      <value>33u</value>
-      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L_Core_Ferrite" description="Inductor with ferrite core"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD4A2C7</tstamp>
-    </comp>
-    <comp ref="L1">
-      <value>33u</value>
-      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L_Core_Ferrite" description="Inductor with ferrite core"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD4A387</tstamp>
-    </comp>
-    <comp ref="J4">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11F91</tstamp>
-    </comp>
-    <comp ref="J5">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11F97</tstamp>
-    </comp>
-    <comp ref="C26">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11F9D</tstamp>
-    </comp>
-    <comp ref="C33">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11FA3</tstamp>
-    </comp>
-    <comp ref="L8">
-      <value>18n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L" description="Inductor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11FA9</tstamp>
-    </comp>
-    <comp ref="C27">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11FAF</tstamp>
-    </comp>
-    <comp ref="R13">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11FB5</tstamp>
-    </comp>
-    <comp ref="R16">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE11FBB</tstamp>
-    </comp>
-    <comp ref="C28">
-      <value>1.8n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE40FCC</tstamp>
-    </comp>
-    <comp ref="R14">
-      <value>18</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE410CC</tstamp>
-    </comp>
-    <comp ref="C29">
-      <value>0p</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE411B1</tstamp>
-    </comp>
-    <comp ref="R15">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE41251</tstamp>
-    </comp>
-    <comp ref="C30">
-      <value>68n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE41301</tstamp>
-    </comp>
-    <comp ref="C31">
-      <value>390</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE413AD</tstamp>
-    </comp>
-    <comp ref="R17">
-      <value>68</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE41455</tstamp>
-    </comp>
-    <comp ref="R4">
-      <value>150</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE9684B</tstamp>
-    </comp>
-    <comp ref="D1">
-      <value>LED</value>
-      <footprint>LEDs:LED_0805_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CE96AAA</tstamp>
-    </comp>
-    <comp ref="U1">
-      <value>L7812</value>
+    <comp ref="U4">
+      <value>L7805</value>
       <footprint>Power_Integrations:TO-220</footprint>
       <datasheet>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</datasheet>
-      <libsource lib="Regulator_Linear" part="L7812" description="Positive 1.5A 35V Linear Regulator, Fixed Output 12V, TO-220/TO-263/TO-252"/>
+      <libsource lib="Regulator_Linear" part="L7805" description="Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
+      <property name="ki_description" value="Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252"/>
+      <property name="ki_keywords" value="Voltage Regulator 1.5A Positive"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CEC117F</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005ef381d2</tstamps>
     </comp>
-    <comp ref="C4">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_1210_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+    <comp ref="U5">
+      <value>ADP7158</value>
+      <footprint>Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm</footprint>
+      <libsource lib="adp7158" part="ADP7158" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CEE881A</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005ee9a95a</tstamps>
     </comp>
-    <comp ref="C3">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+    <comp ref="U6">
+      <value>GRF3042</value>
+      <footprint>Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.5mm</footprint>
+      <libsource lib="grf_3042" part="GRF3042" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CEE88E6</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005ee9acca</tstamps>
     </comp>
-    <comp ref="C2">
-      <value>100n</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+    <comp ref="U7">
+      <value>GRF3042</value>
+      <footprint>Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.5mm</footprint>
+      <libsource lib="grf_3042" part="GRF3042" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594.sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CEE8994</tstamp>
-    </comp>
-    <comp ref="C1">
-      <value>10u</value>
-      <footprint>Capacitors_SMD:C_1210_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CEE8A62</tstamp>
-    </comp>
-    <comp ref="R5">
-      <value>1k</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CF54C71</tstamp>
-    </comp>
-    <comp ref="D2">
-      <value>LED</value>
-      <footprint>LEDs:LED_0805_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CF54C78</tstamp>
-    </comp>
-    <comp ref="R9">
-      <value>150</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CF5FADC</tstamp>
-    </comp>
-    <comp ref="D3">
-      <value>LED</value>
-      <footprint>LEDs:LED_0805_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CF5FAE3</tstamp>
-    </comp>
-    <comp ref="J3">
-      <value>Conn_01x13_Male</value>
-      <footprint>Connectors_Molex:Molex_KK-6410-13_13x2.54mm_Straight</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Connector" part="Conn_01x13_Male" description="Generic connector, single row, 01x13, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFC505A</tstamp>
-    </comp>
-    <comp ref="J6">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFECB34</tstamp>
-    </comp>
-    <comp ref="J8">
-      <value>Conn_Coaxial</value>
-      <footprint>Connect:SMA_THT_Jack_Straight</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFECB3B</tstamp>
-    </comp>
-    <comp ref="R22">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFF83E3</tstamp>
-    </comp>
-    <comp ref="R19">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFF8501</tstamp>
-    </comp>
-    <comp ref="R18">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFF868B</tstamp>
-    </comp>
-    <comp ref="R20">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFF8777</tstamp>
-    </comp>
-    <comp ref="L3">
-      <value>33uH</value>
-      <footprint>Inductors_NEOSID:Neosid_Inductor_Ms95</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="L_Core_Ferrite" description="Inductor with ferrite core"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD1A974</tstamp>
-    </comp>
-    <comp ref="R1">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5D149B9C</tstamp>
-    </comp>
-    <comp ref="R8">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD0456C</tstamp>
-    </comp>
-    <comp ref="R3">
-      <value>50</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD047D2</tstamp>
-    </comp>
-    <comp ref="R23">
-      <value>10K</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CD25BC9</tstamp>
-    </comp>
-    <comp ref="R25">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFBE008</tstamp>
-    </comp>
-    <comp ref="R26">
-      <value>0</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFBE134</tstamp>
-    </comp>
-    <comp ref="R24">
-      <value>150</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFEBE2A</tstamp>
-    </comp>
-    <comp ref="D4">
-      <value>LED</value>
-      <footprint>LEDs:LED_0805_HandSoldering</footprint>
-      <datasheet>~</datasheet>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CFEBE30</tstamp>
+      <tstamps>00000000-0000-0000-0000-00005f338cbc</tstamps>
     </comp>
   </components>
   <libparts>
-    <libpart lib="Connector" part="Conn_01x13_Male">
-      <description>Generic connector, single row, 01x13, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
-      <docs>~</docs>
-      <footprints>
-        <fp>Connector*:*_1x??_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">Conn_01x13_Male</field>
-      </fields>
-      <pins>
-        <pin num="1" name="Pin_1" type="passive"/>
-        <pin num="2" name="Pin_2" type="passive"/>
-        <pin num="3" name="Pin_3" type="passive"/>
-        <pin num="4" name="Pin_4" type="passive"/>
-        <pin num="5" name="Pin_5" type="passive"/>
-        <pin num="6" name="Pin_6" type="passive"/>
-        <pin num="7" name="Pin_7" type="passive"/>
-        <pin num="8" name="Pin_8" type="passive"/>
-        <pin num="9" name="Pin_9" type="passive"/>
-        <pin num="10" name="Pin_10" type="passive"/>
-        <pin num="11" name="Pin_11" type="passive"/>
-        <pin num="12" name="Pin_12" type="passive"/>
-        <pin num="13" name="Pin_13" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Connector" part="Conn_Coaxial">
-      <description>coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)</description>
+      <description>coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)</description>
       <docs> ~</docs>
       <footprints>
         <fp>*BNC*</fp>
@@ -751,10 +1209,15 @@
         <fp>*SMB*</fp>
         <fp>*SMC*</fp>
         <fp>*Cinch*</fp>
+        <fp>*LEMO*</fp>
+        <fp>*UMRF*</fp>
+        <fp>*MCX*</fp>
+        <fp>*U.FL*</fp>
       </footprints>
       <fields>
         <field name="Reference">J</field>
         <field name="Value">Conn_Coaxial</field>
+        <field name="Datasheet"> ~</field>
       </fields>
       <pins>
         <pin num="1" name="In" type="passive"/>
@@ -770,10 +1233,11 @@
       <fields>
         <field name="Reference">C</field>
         <field name="Value">C</field>
+        <field name="Datasheet">~</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="L">
@@ -788,6 +1252,7 @@
       <fields>
         <field name="Reference">L</field>
         <field name="Value">L</field>
+        <field name="Datasheet">~</field>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
@@ -805,28 +1270,11 @@
       <fields>
         <field name="Reference">D</field>
         <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
         <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Device" part="L_Core_Ferrite">
-      <description>Inductor with ferrite core</description>
-      <docs>~</docs>
-      <footprints>
-        <fp>Choke_*</fp>
-        <fp>*Coil*</fp>
-        <fp>Inductor_*</fp>
-        <fp>L_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">L</field>
-        <field name="Value">L_Core_Ferrite</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="R">
@@ -838,23 +1286,14 @@
       <fields>
         <field name="Reference">R</field>
         <field name="Value">R</field>
+        <field name="Datasheet">~</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Regulator_Linear" part="L7805">
-      <aliases>
-        <alias>L7806</alias>
-        <alias>L7808</alias>
-        <alias>L7885</alias>
-        <alias>L7809</alias>
-        <alias>L7812</alias>
-        <alias>L7815</alias>
-        <alias>L7818</alias>
-        <alias>L7824</alias>
-      </aliases>
       <description>Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252</description>
       <docs>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</docs>
       <footprints>
@@ -865,6 +1304,7 @@
       <fields>
         <field name="Reference">U</field>
         <field name="Value">L7805</field>
+        <field name="Datasheet">http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</field>
       </fields>
       <pins>
         <pin num="1" name="IN" type="power_in"/>
@@ -872,51 +1312,54 @@
         <pin num="3" name="OUT" type="power_out"/>
       </pins>
     </libpart>
-    <libpart lib="Regulator_Switching" part="TPS62130">
-      <aliases>
-        <alias>TPS62130A</alias>
-        <alias>TPS62131</alias>
-        <alias>TPS62132</alias>
-        <alias>TPS62133</alias>
-        <alias>TPS62150</alias>
-        <alias>TPS62150A</alias>
-        <alias>TPS62151</alias>
-        <alias>TPS62152</alias>
-        <alias>TPS62153</alias>
-        <alias>TPS62140</alias>
-        <alias>TPS62140A</alias>
-        <alias>TPS62141</alias>
-        <alias>TPS62142</alias>
-        <alias>TPS62143</alias>
-      </aliases>
-      <description>3A Step-Down Converter with DCS-Control, Adjustable Output Voltage, 3-17V Input Voltage, QFN-16</description>
-      <docs>http://www.ti.com/lit/ds/symlink/tps62130.pdf</docs>
+    <libpart lib="Regulator_Linear" part="LM7809_TO220">
+      <description>Positive 1A 35V Linear Regulator, Fixed Output 9V, TO-220</description>
+      <docs>https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF</docs>
       <footprints>
-        <fp>QFN*3x3mm*P0.5mm*</fp>
+        <fp>TO?220*</fp>
       </footprints>
       <fields>
         <field name="Reference">U</field>
-        <field name="Value">TPS62130</field>
-        <field name="Footprint">Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm</field>
+        <field name="Value">LM7809_TO220</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+        <field name="Datasheet">https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF</field>
       </fields>
       <pins>
-        <pin num="1" name="SW" type="output"/>
-        <pin num="2" name="SW" type="passive"/>
-        <pin num="3" name="SW" type="passive"/>
-        <pin num="4" name="PG" type="openCol"/>
-        <pin num="5" name="FB" type="input"/>
-        <pin num="6" name="AGND" type="power_in"/>
-        <pin num="7" name="FSW" type="input"/>
-        <pin num="8" name="DEF" type="input"/>
-        <pin num="9" name="SS/TR" type="input"/>
-        <pin num="10" name="AVIN" type="power_in"/>
-        <pin num="11" name="PVIN" type="power_in"/>
-        <pin num="12" name="PVIN" type="passive"/>
-        <pin num="13" name="EN" type="input"/>
-        <pin num="14" name="VOS" type="input"/>
-        <pin num="15" name="PGND" type="power_in"/>
-        <pin num="16" name="PGND" type="passive"/>
-        <pin num="17" name="EP" type="power_in"/>
+        <pin num="1" name="VI" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="adp7158" part="ADP7158">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADP7158</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VOUT" type="power_out"/>
+        <pin num="2" name="VOUT_SENSE" type="input"/>
+        <pin num="3" name="BYP" type="unspecified"/>
+        <pin num="4" name="EN" type="input"/>
+        <pin num="5" name="REF_SENSE" type="input"/>
+        <pin num="6" name="REF" type="unspecified"/>
+        <pin num="7" name="VREG" type="unspecified"/>
+        <pin num="8" name="VIN" type="power_in"/>
+        <pin num="9" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="grf_3042" part="GRF3042">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">GRF3042</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="I" type="input"/>
+        <pin num="4" name="O" type="output"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
       </pins>
     </libpart>
     <libpart lib="lmx2594" part="lmx254">
@@ -927,14 +1370,14 @@
       <pins>
         <pin num="1" name="CE" type="input"/>
         <pin num="2" name="GND" type="power_in"/>
-        <pin num="3" name="VBIASVCO" type="BiDi"/>
+        <pin num="3" name="VBIASVCO" type="bidirectional"/>
         <pin num="4" name="GND" type="power_in"/>
         <pin num="5" name="SYNC" type="input"/>
         <pin num="6" name="GND" type="power_in"/>
         <pin num="7" name="VCCDIG" type="power_in"/>
         <pin num="8" name="OSCINP" type="input"/>
         <pin num="9" name="OSCINM" type="input"/>
-        <pin num="10" name="VREGIN" type="BiDi"/>
+        <pin num="10" name="VREGIN" type="bidirectional"/>
         <pin num="11" name="VCCP" type="power_in"/>
         <pin num="12" name="CPOUT" type="output"/>
         <pin num="13" name="GND" type="power_in"/>
@@ -951,393 +1394,517 @@
         <pin num="24" name="CSB" type="input"/>
         <pin num="25" name="GND" type="power_in"/>
         <pin num="26" name="VCCVCO2" type="power_in"/>
-        <pin num="27" name="VBIASVCO2" type="BiDi"/>
+        <pin num="27" name="VBIASVCO2" type="bidirectional"/>
         <pin num="28" name="SYSREFREQ" type="input"/>
-        <pin num="29" name="VREFVCO2" type="BiDi"/>
+        <pin num="29" name="VREFVCO2" type="bidirectional"/>
         <pin num="30" name="RAMPCLK" type="input"/>
         <pin num="31" name="GND" type="power_in"/>
         <pin num="32" name="RAMPDIR" type="input"/>
-        <pin num="33" name="VBIASVARAC" type="BiDi"/>
+        <pin num="33" name="VBIASVARAC" type="bidirectional"/>
         <pin num="34" name="GND" type="power_in"/>
         <pin num="35" name="VTUNE" type="output"/>
-        <pin num="36" name="VREFCVO" type="BiDi"/>
+        <pin num="36" name="VREFCVO" type="bidirectional"/>
         <pin num="37" name="VCCVCO" type="power_in"/>
-        <pin num="38" name="VREGVCO" type="BiDi"/>
+        <pin num="38" name="VREGVCO" type="bidirectional"/>
         <pin num="39" name="GND" type="power_in"/>
         <pin num="40" name="GND" type="power_in"/>
         <pin num="41" name="GND" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="lmx2594-rescue" part="Conn_01x13_Male-Connector">
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Connector_Conn_01x13_Male</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lmx2594-rescue" part="L_Core_Ferrite-Device">
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">Device_L_Core_Ferrite</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="vs_500" part="VS_500">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">VS_500</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VC" type="power_in"/>
+        <pin num="2" name="OD" type="power_in"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="OUTPUT" type="output"/>
+        <pin num="5" name="COUTPUT" type="output"/>
+        <pin num="6" name="VCC" type="output"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
     <library logical="Connector">
-      <uri>/usr/share/kicad/library/Connector.lib</uri>
+      <uri>/usr/share/kicad/symbols//Connector.kicad_sym</uri>
     </library>
     <library logical="Device">
-      <uri>/usr/share/kicad/library/Device.lib</uri>
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="Regulator_Linear">
-      <uri>/usr/share/kicad/library/Regulator_Linear.lib</uri>
+      <uri>/usr/share/kicad/symbols//Regulator_Linear.kicad_sym</uri>
     </library>
-    <library logical="Regulator_Switching">
-      <uri>/usr/share/kicad/library/Regulator_Switching.lib</uri>
+    <library logical="adp7158">
+      <uri>/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/adp7158.lib</uri>
+    </library>
+    <library logical="grf_3042">
+      <uri>/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/grf_3042.lib</uri>
     </library>
     <library logical="lmx2594">
       <uri>/home/bjohan/git_wd/lmx2594/pcb/lmx2594/lmx2594.lib</uri>
     </library>
+    <library logical="lmx2594-rescue">
+      <uri>/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/lmx2594-rescue.kicad_sym</uri>
+    </library>
+    <library logical="vs_500">
+      <uri>/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/vs_500.lib</uri>
+    </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(C30-Pad2)">
-      <node ref="C30" pin="2"/>
-      <node ref="R17" pin="2"/>
+    <net code="1" name="/3V3">
+      <node ref="C46" pin="1" pintype="passive"/>
+      <node ref="J3" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="L5" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U5" pin="1" pinfunction="VOUT" pintype="power_out"/>
+      <node ref="U5" pin="2" pinfunction="VOUT_SENSE" pintype="input"/>
     </net>
-    <net code="2" name="Net-(C29-Pad1)">
-      <node ref="R14" pin="1"/>
-      <node ref="C29" pin="1"/>
-      <node ref="R15" pin="2"/>
+    <net code="2" name="/5V">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="L3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="U5" pin="8" pinfunction="VIN" pintype="power_in"/>
     </net>
-    <net code="3" name="GND">
-      <node ref="U3" pin="6"/>
-      <node ref="U3" pin="41"/>
-      <node ref="U3" pin="34"/>
-      <node ref="R3" pin="1"/>
-      <node ref="J1" pin="2"/>
-      <node ref="U3" pin="39"/>
-      <node ref="U3" pin="4"/>
-      <node ref="U3" pin="40"/>
-      <node ref="U3" pin="13"/>
-      <node ref="U2" pin="16"/>
-      <node ref="U3" pin="25"/>
-      <node ref="U3" pin="31"/>
-      <node ref="U2" pin="15"/>
-      <node ref="U2" pin="17"/>
-      <node ref="U2" pin="6"/>
-      <node ref="U2" pin="8"/>
-      <node ref="J7" pin="2"/>
-      <node ref="J9" pin="2"/>
-      <node ref="C18" pin="1"/>
-      <node ref="C13" pin="2"/>
-      <node ref="C14" pin="2"/>
-      <node ref="C27" pin="1"/>
-      <node ref="C34" pin="2"/>
-      <node ref="J2" pin="2"/>
-      <node ref="R8" pin="2"/>
-      <node ref="C8" pin="2"/>
-      <node ref="C6" pin="2"/>
-      <node ref="C5" pin="2"/>
-      <node ref="C7" pin="2"/>
-      <node ref="C21" pin="2"/>
-      <node ref="C22" pin="2"/>
-      <node ref="J8" pin="2"/>
-      <node ref="J6" pin="2"/>
-      <node ref="C35" pin="2"/>
-      <node ref="C32" pin="2"/>
-      <node ref="C36" pin="2"/>
-      <node ref="C37" pin="2"/>
-      <node ref="C38" pin="2"/>
-      <node ref="C39" pin="2"/>
-      <node ref="C19" pin="1"/>
-      <node ref="C25" pin="2"/>
-      <node ref="C24" pin="2"/>
-      <node ref="C23" pin="2"/>
-      <node ref="D3" pin="1"/>
-      <node ref="U3" pin="14"/>
-      <node ref="U3" pin="2"/>
-      <node ref="D2" pin="1"/>
-      <node ref="J3" pin="3"/>
-      <node ref="D1" pin="1"/>
-      <node ref="C1" pin="2"/>
-      <node ref="C2" pin="2"/>
-      <node ref="J4" pin="2"/>
-      <node ref="C12" pin="2"/>
-      <node ref="C4" pin="2"/>
-      <node ref="J5" pin="2"/>
-      <node ref="U1" pin="2"/>
-      <node ref="R10" pin="2"/>
-      <node ref="C3" pin="2"/>
-      <node ref="C28" pin="2"/>
-      <node ref="R17" pin="1"/>
-      <node ref="C31" pin="2"/>
-      <node ref="C29" pin="2"/>
-      <node ref="C11" pin="2"/>
+    <net code="3" name="/5V_unfilt">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="L3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U4" pin="3" pinfunction="OUT" pintype="power_out"/>
     </net>
-    <net code="4" name="Net-(D1-Pad2)">
-      <node ref="D1" pin="2"/>
-      <node ref="R4" pin="1"/>
+    <net code="4" name="/9V">
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C56" pin="2" pintype="passive"/>
+      <node ref="C57" pin="2" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="VO" pintype="power_out"/>
     </net>
-    <net code="5" name="/MUX">
-      <node ref="U3" pin="20"/>
-      <node ref="R4" pin="2"/>
-      <node ref="J3" pin="11"/>
+    <net code="5" name="/CE">
+      <node ref="J3" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="CE" pintype="input"/>
     </net>
-    <net code="6" name="/RFA_BIAS">
-      <node ref="C18" pin="2"/>
-      <node ref="L7" pin="1"/>
-      <node ref="R11" pin="2"/>
-      <node ref="R12" pin="1"/>
+    <net code="6" name="/CPOUT">
+      <node ref="C30" pin="1" pintype="passive"/>
+      <node ref="C31" pin="1" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U3" pin="12" pinfunction="CPOUT" pintype="output"/>
     </net>
-    <net code="7" name="Net-(C20-Pad1)">
-      <node ref="C20" pin="1"/>
-      <node ref="J2" pin="1"/>
+    <net code="7" name="/CSB">
+      <node ref="J3" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U3" pin="24" pinfunction="CSB" pintype="input"/>
     </net>
-    <net code="8" name="/VRF">
-      <node ref="R2" pin="1"/>
-      <node ref="C7" pin="1"/>
-      <node ref="C8" pin="1"/>
-      <node ref="R25" pin="1"/>
-      <node ref="L8" pin="2"/>
-      <node ref="L7" pin="2"/>
-      <node ref="L1" pin="2"/>
+    <net code="8" name="/MUX">
+      <node ref="J3" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U3" pin="20" pinfunction="MUXOUT" pintype="output"/>
     </net>
-    <net code="9" name="Net-(C33-Pad1)">
-      <node ref="J5" pin="1"/>
-      <node ref="C33" pin="1"/>
+    <net code="9" name="/OSCIN_N">
+      <node ref="C43" pin="1" pintype="passive"/>
+      <node ref="U3" pin="9" pinfunction="OSCINM" pintype="input"/>
     </net>
-    <net code="10" name="Net-(C19-Pad2)">
-      <node ref="C19" pin="2"/>
-      <node ref="R26" pin="2"/>
-      <node ref="U3" pin="21"/>
-      <node ref="R25" pin="2"/>
+    <net code="10" name="/OSCIN_P">
+      <node ref="C41" pin="1" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="OSCINP" pintype="input"/>
     </net>
-    <net code="11" name="/VCC">
-      <node ref="C13" pin="1"/>
-      <node ref="L5" pin="2"/>
-      <node ref="C21" pin="1"/>
-      <node ref="C25" pin="1"/>
-      <node ref="C24" pin="1"/>
-      <node ref="C23" pin="1"/>
-      <node ref="C22" pin="1"/>
-      <node ref="C14" pin="1"/>
-      <node ref="R26" pin="1"/>
-      <node ref="U3" pin="37"/>
-      <node ref="U3" pin="26"/>
-      <node ref="U3" pin="7"/>
-      <node ref="R23" pin="1"/>
-      <node ref="U3" pin="15"/>
-      <node ref="U3" pin="11"/>
-      <node ref="R7" pin="1"/>
+    <net code="11" name="/RAMPCLK">
+      <node ref="J3" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U3" pin="30" pinfunction="RAMPCLK" pintype="input"/>
     </net>
-    <net code="12" name="Net-(C26-Pad1)">
-      <node ref="C26" pin="1"/>
-      <node ref="J4" pin="1"/>
+    <net code="12" name="/RAMPDIR">
+      <node ref="J3" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U3" pin="32" pinfunction="RAMPDIR" pintype="input"/>
     </net>
-    <net code="13" name="Net-(C17-Pad1)">
-      <node ref="C17" pin="1"/>
-      <node ref="J1" pin="1"/>
+    <net code="13" name="/RFA_BIAS">
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="L7" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
     </net>
     <net code="14" name="/RFB_BIAS">
-      <node ref="R16" pin="1"/>
-      <node ref="L8" pin="1"/>
-      <node ref="C27" pin="2"/>
-      <node ref="R13" pin="2"/>
+      <node ref="C27" pin="2" pintype="passive"/>
+      <node ref="L8" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
     </net>
-    <net code="15" name="/VTUNE">
-      <node ref="U3" pin="35"/>
-      <node ref="C28" pin="1"/>
-      <node ref="R14" pin="2"/>
+    <net code="15" name="/RFOUT_A_N">
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U3" pin="22" pinfunction="RFOUTAM" pintype="output"/>
     </net>
-    <net code="16" name="/CPOUT">
-      <node ref="U3" pin="12"/>
-      <node ref="R15" pin="1"/>
-      <node ref="C30" pin="1"/>
-      <node ref="C31" pin="1"/>
+    <net code="16" name="/RFOUT_A_P">
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="U3" pin="23" pinfunction="RFOUTAP" pintype="output"/>
     </net>
-    <net code="17" name="/RFOUT_A_P">
-      <node ref="R11" pin="1"/>
-      <node ref="U3" pin="23"/>
-      <node ref="C17" pin="2"/>
+    <net code="17" name="/RFOUT_B_N">
+      <node ref="C26" pin="2" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U3" pin="18" pinfunction="RFOUTBM" pintype="output"/>
     </net>
-    <net code="18" name="/RFOUT_A_N">
-      <node ref="U3" pin="22"/>
-      <node ref="C20" pin="2"/>
-      <node ref="R12" pin="2"/>
+    <net code="18" name="/RFOUT_B_P">
+      <node ref="C33" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="U3" pin="19" pinfunction="RFOUTBP" pintype="output"/>
     </net>
-    <net code="19" name="/RFOUT_B_P">
-      <node ref="U3" pin="19"/>
-      <node ref="C33" pin="2"/>
-      <node ref="R16" pin="2"/>
+    <net code="19" name="/SCK">
+      <node ref="J3" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U3" pin="16" pinfunction="SCK" pintype="input"/>
     </net>
-    <net code="20" name="/RFOUT_B_N">
-      <node ref="C26" pin="2"/>
-      <node ref="R13" pin="1"/>
-      <node ref="U3" pin="18"/>
+    <net code="20" name="/SDI">
+      <node ref="J3" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U3" pin="17" pinfunction="SDI" pintype="input"/>
     </net>
-    <net code="21" name="/SYSREF_REQ_S">
-      <node ref="R18" pin="2"/>
-      <node ref="J3" pin="13"/>
+    <net code="21" name="/SYNC">
+      <node ref="J3" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="SYNC" pintype="input"/>
     </net>
-    <net code="22" name="/CE">
-      <node ref="J3" pin="6"/>
-      <node ref="R23" pin="2"/>
-      <node ref="U3" pin="1"/>
+    <net code="22" name="/SYSREFREQ">
+      <node ref="J3" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U3" pin="28" pinfunction="SYSREFREQ" pintype="input"/>
     </net>
-    <net code="23" name="/RAMPDIR">
-      <node ref="J3" pin="7"/>
-      <node ref="U3" pin="32"/>
+    <net code="23" name="/VCC">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C59" pin="1" pintype="passive"/>
+      <node ref="L5" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="VCC" pintype="output"/>
+      <node ref="U3" pin="11" pinfunction="VCCP" pintype="power_in"/>
+      <node ref="U3" pin="15" pinfunction="VCCMASH" pintype="power_in"/>
+      <node ref="U3" pin="26" pinfunction="VCCVCO2" pintype="power_in"/>
+      <node ref="U3" pin="37" pinfunction="VCCVCO" pintype="power_in"/>
+      <node ref="U3" pin="7" pinfunction="VCCDIG" pintype="power_in"/>
     </net>
-    <net code="24" name="/RAMPCLK">
-      <node ref="U3" pin="30"/>
-      <node ref="J3" pin="8"/>
+    <net code="24" name="/VIN">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="VI" pintype="power_in"/>
+      <node ref="U4" pin="1" pinfunction="IN" pintype="power_in"/>
     </net>
-    <net code="25" name="/SCK">
-      <node ref="J3" pin="9"/>
-      <node ref="U3" pin="16"/>
+    <net code="25" name="/VRF">
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L7" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L8" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
     </net>
-    <net code="26" name="/SDI">
-      <node ref="J3" pin="10"/>
-      <node ref="U3" pin="17"/>
+    <net code="26" name="/VTUNE">
+      <node ref="C28" pin="1" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="U3" pin="35" pinfunction="VTUNE" pintype="output"/>
     </net>
-    <net code="27" name="/CSB">
-      <node ref="J3" pin="12"/>
-      <node ref="U3" pin="24"/>
+    <net code="27" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="C27" pin="1" pintype="passive"/>
+      <node ref="C28" pin="2" pintype="passive"/>
+      <node ref="C29" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C31" pin="2" pintype="passive"/>
+      <node ref="C32" pin="2" pintype="passive"/>
+      <node ref="C34" pin="2" pintype="passive"/>
+      <node ref="C35" pin="2" pintype="passive"/>
+      <node ref="C36" pin="2" pintype="passive"/>
+      <node ref="C37" pin="2" pintype="passive"/>
+      <node ref="C38" pin="2" pintype="passive"/>
+      <node ref="C39" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C44" pin="2" pintype="passive"/>
+      <node ref="C45" pin="2" pintype="passive"/>
+      <node ref="C46" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C50" pin="1" pintype="passive"/>
+      <node ref="C52" pin="1" pintype="passive"/>
+      <node ref="C55" pin="1" pintype="passive"/>
+      <node ref="C56" pin="1" pintype="passive"/>
+      <node ref="C57" pin="1" pintype="passive"/>
+      <node ref="C58" pin="1" pintype="passive"/>
+      <node ref="C59" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="J3" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="J9" pin="2" pinfunction="Ext" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="13" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="14" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="25" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="31" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="34" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="39" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="4" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="40" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="41" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U4" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5" pin="9" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6" pin="5" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U7" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U7" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U7" pin="5" pinfunction="GND" pintype="power_in"/>
+      <node ref="U7" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U7" pin="7" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="28" name="/12V_unfilt">
-      <node ref="U1" pin="3"/>
-      <node ref="C4" pin="1"/>
-      <node ref="J3" pin="2"/>
-      <node ref="R1" pin="2"/>
-      <node ref="L3" pin="1"/>
-      <node ref="C3" pin="1"/>
-      <node ref="R5" pin="2"/>
+    <net code="28" name="Net-(C29-Pad1)">
+      <node ref="C29" pin="1" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
     </net>
-    <net code="29" name="Net-(D4-Pad2)">
-      <node ref="D4" pin="2"/>
-      <node ref="R24" pin="1"/>
+    <net code="29" name="Net-(C30-Pad2)">
+      <node ref="C30" pin="2" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
     </net>
-    <net code="30" name="/PG">
-      <node ref="U2" pin="4"/>
-      <node ref="D4" pin="1"/>
+    <net code="30" name="Net-(C40-Pad1)">
+      <node ref="C40" pin="1" pintype="passive"/>
+      <node ref="C41" pin="2" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
     </net>
-    <net code="31" name="/SYNC_S">
-      <node ref="J3" pin="5"/>
-      <node ref="R20" pin="2"/>
+    <net code="31" name="Net-(C42-Pad1)">
+      <node ref="C42" pin="1" pintype="passive"/>
+      <node ref="C43" pin="2" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
     </net>
-    <net code="32" name="Net-(D3-Pad2)">
-      <node ref="D3" pin="2"/>
-      <node ref="R9" pin="1"/>
+    <net code="32" name="Net-(C50-Pad2)">
+      <node ref="C50" pin="2" pintype="passive"/>
+      <node ref="C55" pin="2" pintype="passive"/>
+      <node ref="L2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R28" pin="1" pintype="passive"/>
     </net>
-    <net code="33" name="/VIN">
-      <node ref="J3" pin="1"/>
-      <node ref="U1" pin="1"/>
-      <node ref="C2" pin="1"/>
-      <node ref="C1" pin="1"/>
+    <net code="33" name="Net-(C52-Pad2)">
+      <node ref="C52" pin="2" pintype="passive"/>
+      <node ref="C58" pin="2" pintype="passive"/>
+      <node ref="L4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R29" pin="1" pintype="passive"/>
     </net>
-    <net code="34" name="/12V">
-      <node ref="C5" pin="1"/>
-      <node ref="C6" pin="1"/>
-      <node ref="R1" pin="1"/>
-      <node ref="U2" pin="10"/>
-      <node ref="U2" pin="11"/>
-      <node ref="U2" pin="12"/>
-      <node ref="U2" pin="13"/>
-      <node ref="L3" pin="2"/>
+    <net code="34" name="Net-(D1-A)">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
     </net>
-    <net code="35" name="Net-(D2-Pad2)">
-      <node ref="D2" pin="2"/>
-      <node ref="R5" pin="1"/>
+    <net code="35" name="Net-(D2-A)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
     </net>
-    <net code="36" name="Net-(J8-Pad1)">
-      <node ref="J8" pin="1"/>
-      <node ref="R22" pin="2"/>
+    <net code="36" name="Net-(D3-A)">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
     </net>
-    <net code="37" name="Net-(J6-Pad1)">
-      <node ref="R19" pin="2"/>
-      <node ref="J6" pin="1"/>
+    <net code="37" name="Net-(J1-In)">
+      <node ref="C51" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="38" name="Net-(C36-Pad1)">
-      <node ref="U3" pin="29"/>
-      <node ref="C36" pin="1"/>
+    <net code="38" name="Net-(J2-In)">
+      <node ref="C53" pin="1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="39" name="/OSCIN_P">
-      <node ref="C41" pin="1"/>
-      <node ref="U3" pin="8"/>
+    <net code="39" name="Net-(J4-In)">
+      <node ref="C26" pin="1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="40" name="Net-(C32-Pad1)">
-      <node ref="U3" pin="10"/>
-      <node ref="C32" pin="1"/>
+    <net code="40" name="Net-(J5-In)">
+      <node ref="C33" pin="1" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="41" name="Net-(C34-Pad1)">
-      <node ref="C34" pin="1"/>
-      <node ref="U3" pin="36"/>
+    <net code="41" name="Net-(J7-In)">
+      <node ref="C40" pin="2" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="42" name="Net-(C35-Pad1)">
-      <node ref="C35" pin="1"/>
-      <node ref="U3" pin="38"/>
+    <net code="42" name="Net-(J9-In)">
+      <node ref="C42" pin="2" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="In" pintype="passive"/>
     </net>
-    <net code="43" name="Net-(C37-Pad1)">
-      <node ref="C37" pin="1"/>
-      <node ref="U3" pin="3"/>
+    <net code="43" name="Net-(U2-COUTPUT)">
+      <node ref="R24" pin="2" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="COUTPUT" pintype="output"/>
     </net>
-    <net code="44" name="Net-(C38-Pad1)">
-      <node ref="C38" pin="1"/>
-      <node ref="U3" pin="27"/>
+    <net code="44" name="Net-(U2-OD)">
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="OD" pintype="power_in"/>
     </net>
-    <net code="45" name="Net-(C39-Pad1)">
-      <node ref="U3" pin="33"/>
-      <node ref="C39" pin="1"/>
+    <net code="45" name="Net-(U2-OUTPUT)">
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="OUTPUT" pintype="output"/>
     </net>
-    <net code="46" name="Net-(C42-Pad1)">
-      <node ref="C43" pin="2"/>
-      <node ref="R21" pin="2"/>
-      <node ref="C42" pin="1"/>
-      <node ref="R8" pin="1"/>
+    <net code="46" name="Net-(U2-VC)">
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="VC" pintype="power_in"/>
     </net>
-    <net code="47" name="Net-(R10-Pad1)">
-      <node ref="U2" pin="5"/>
-      <node ref="R10" pin="1"/>
-      <node ref="R6" pin="2"/>
+    <net code="47" name="Net-(U3-VBIASVARAC)">
+      <node ref="C39" pin="1" pintype="passive"/>
+      <node ref="U3" pin="33" pinfunction="VBIASVARAC" pintype="bidirectional"/>
     </net>
-    <net code="48" name="Net-(C40-Pad2)">
-      <node ref="J7" pin="1"/>
-      <node ref="C40" pin="2"/>
+    <net code="48" name="Net-(U3-VBIASVCO)">
+      <node ref="C37" pin="1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="VBIASVCO" pintype="bidirectional"/>
     </net>
-    <net code="49" name="Net-(C42-Pad2)">
-      <node ref="J9" pin="1"/>
-      <node ref="C42" pin="2"/>
+    <net code="49" name="Net-(U3-VBIASVCO2)">
+      <node ref="C38" pin="1" pintype="passive"/>
+      <node ref="U3" pin="27" pinfunction="VBIASVCO2" pintype="bidirectional"/>
     </net>
-    <net code="50" name="Net-(C40-Pad1)">
-      <node ref="C41" pin="2"/>
-      <node ref="C40" pin="1"/>
-      <node ref="R21" pin="1"/>
-      <node ref="R3" pin="2"/>
+    <net code="50" name="Net-(U3-VCCBUF)">
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="U3" pin="21" pinfunction="VCCBUF" pintype="power_in"/>
     </net>
-    <net code="51" name="/OSCIN_N">
-      <node ref="U3" pin="9"/>
-      <node ref="C43" pin="1"/>
+    <net code="51" name="Net-(U3-VREFCVO)">
+      <node ref="C34" pin="1" pintype="passive"/>
+      <node ref="U3" pin="36" pinfunction="VREFCVO" pintype="bidirectional"/>
     </net>
-    <net code="52" name="/SYNC">
-      <node ref="R22" pin="1"/>
-      <node ref="U3" pin="5"/>
-      <node ref="R20" pin="1"/>
+    <net code="52" name="Net-(U3-VREFVCO2)">
+      <node ref="C36" pin="1" pintype="passive"/>
+      <node ref="U3" pin="29" pinfunction="VREFVCO2" pintype="bidirectional"/>
     </net>
-    <net code="53" name="/SYSREFREQ">
-      <node ref="R18" pin="1"/>
-      <node ref="U3" pin="28"/>
-      <node ref="R19" pin="1"/>
+    <net code="53" name="Net-(U3-VREGIN)">
+      <node ref="C32" pin="1" pintype="passive"/>
+      <node ref="U3" pin="10" pinfunction="VREGIN" pintype="bidirectional"/>
     </net>
-    <net code="54" name="/SW">
-      <node ref="L4" pin="1"/>
-      <node ref="U2" pin="3"/>
-      <node ref="U2" pin="2"/>
-      <node ref="U2" pin="1"/>
+    <net code="54" name="Net-(U3-VREGVCO)">
+      <node ref="C35" pin="1" pintype="passive"/>
+      <node ref="U3" pin="38" pinfunction="VREGVCO" pintype="bidirectional"/>
     </net>
-    <net code="55" name="/3V3">
-      <node ref="U2" pin="7"/>
-      <node ref="U2" pin="14"/>
-      <node ref="C12" pin="1"/>
-      <node ref="R6" pin="1"/>
-      <node ref="L4" pin="2"/>
-      <node ref="L1" pin="1"/>
-      <node ref="R24" pin="2"/>
-      <node ref="J3" pin="4"/>
-      <node ref="L5" pin="1"/>
-      <node ref="R9" pin="2"/>
-      <node ref="R2" pin="2"/>
-      <node ref="R7" pin="2"/>
+    <net code="55" name="Net-(U5-BYP)">
+      <node ref="C45" pin="1" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="BYP" pintype="unspecified"/>
     </net>
-    <net code="56" name="Net-(C11-Pad1)">
-      <node ref="U2" pin="9"/>
-      <node ref="C11" pin="1"/>
+    <net code="56" name="Net-(U5-EN)">
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="U5" pin="4" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="57" name="Net-(U5-REF)">
+      <node ref="C44" pin="1" pintype="passive"/>
+      <node ref="U5" pin="5" pinfunction="REF_SENSE" pintype="input"/>
+      <node ref="U5" pin="6" pinfunction="REF" pintype="unspecified"/>
+    </net>
+    <net code="58" name="Net-(U5-VREG)">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="U5" pin="7" pinfunction="VREG" pintype="unspecified"/>
+    </net>
+    <net code="59" name="Net-(U6-I)">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="U6" pin="3" pinfunction="I" pintype="input"/>
+    </net>
+    <net code="60" name="Net-(U6-O)">
+      <node ref="C51" pin="2" pintype="passive"/>
+      <node ref="L2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U6" pin="4" pinfunction="O" pintype="output"/>
+    </net>
+    <net code="61" name="Net-(U7-I)">
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U7" pin="3" pinfunction="I" pintype="input"/>
+    </net>
+    <net code="62" name="Net-(U7-O)">
+      <node ref="C53" pin="2" pintype="passive"/>
+      <node ref="L4" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U7" pin="4" pinfunction="O" pintype="output"/>
     </net>
   </nets>
 </export>

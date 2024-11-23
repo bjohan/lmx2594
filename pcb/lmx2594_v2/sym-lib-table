@@ -1,6 +1,8 @@
 (sym_lib_table
-  (lib (name lmx2594)(type Legacy)(uri /home/bjohan/git_wd/lmx2594/pcb/lmx2594/lmx2594.lib)(options "")(descr ""))
-  (lib (name adp7158)(type Legacy)(uri /home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/adp7158.lib)(options "")(descr ""))
-  (lib (name vs_500)(type Legacy)(uri /home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/vs_500.lib)(options "")(descr ""))
-  (lib (name grf_3042)(type Legacy)(uri /home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/grf_3042.lib)(options "")(descr ""))
+  (version 7)
+  (lib (name "lmx2594")(type "Legacy")(uri "/home/bjohan/git_wd/lmx2594/pcb/lmx2594/lmx2594.lib")(options "")(descr ""))
+  (lib (name "adp7158")(type "Legacy")(uri "/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/adp7158.lib")(options "")(descr ""))
+  (lib (name "vs_500")(type "Legacy")(uri "/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/vs_500.lib")(options "")(descr ""))
+  (lib (name "grf_3042")(type "Legacy")(uri "/home/bjohan/git_wd/lmx2594/pcb/lmx2594_v2/grf_3042.lib")(options "")(descr ""))
+  (lib (name "lmx2594-rescue")(type "KiCad")(uri "${KIPRJMOD}/lmx2594-rescue.kicad_sym")(options "")(descr ""))
 )
