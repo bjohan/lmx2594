@@ -165,7 +165,7 @@ class Lmx2594():
 
     def setupReferencePath(self):
         ref=self.fosc
-        if ref < 200e6:
+        if ref < 200e6 and ref > 20e6:
             self.setField('OSC_2X',1)
             ref=ref*2
         else:
@@ -357,13 +357,14 @@ class Lmx2594():
         if minimumN > multFrac:
             raise ValueError("Unable to set frequency, required multiplier is less than than minimum n, try reducing mash_order or fpd")
 
-        #print("Multiplication fraction", multFrac)
+        print("Multiplication fraction", multFrac)
         fracfrac = multFrac-minimumN
-        #print("Fractional fraction", fracfrac)
+        print("Fractional fraction", fracfrac)
 
         n = minimumN
         num = fracfrac.numerator
         den = fracfrac.denominator
+        extraN = 0;
         if num > den:
             extraN = int(int(num)/int(den));
         n = n + extraN
