@@ -354,7 +354,11 @@ class Lmx2594():
     def setFrequency2(self, f, mash_order=4):
         fpd = self.getFpd();
         fvco=f
+        useDoubler=False
         #determine vcoFrequency:
+        if fvco > 15e9:
+            fvco = fvco/2;
+            useDoubler=True
         if fvco > 15e9:
             raise ValueError("Frequency too high %f is more than 15e9"%(fvco))
 
@@ -419,7 +423,15 @@ class Lmx2594():
         else:
             self.setField('OUTA_MUX', 1)
             self.setField('OUTB_MUX', 1)
-            
+        
+        if useDoubler:
+            self.writeRegister(25, 3115) #Doubler bias control
+            self.setField('OUTA_MUX', 2) #select doubler output
+            self.writeRegister(27, 3) #Enable doubler
+        else:
+            self.writeRegister(27, 2)
+
+                
            
         #print("N", n, "num", num, "den", den)
         factual=mp.mpf(fpd)*(mp.mpf(n)+mp.mpf(num)/mp.mpf(den))
