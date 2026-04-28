@@ -165,11 +165,11 @@ class Lmx2594():
 
     def setupReferencePath(self):
         ref=self.fosc
-        if ref < 200e6 and ref > 20e6:
-            self.setField('OSC_2X',1)
-            ref=ref*2
-        else:
-            self.setField('OSC_2X', 0)
+        #if ref < 200e6 and ref > 20e6:
+        #    self.setField('OSC_2X',1)
+        #    ref=ref*2
+        #else:
+        self.setField('OSC_2X', 0)
         
         if ref > 250e6:
             div=int(ref/250.0e6+1)
@@ -234,6 +234,24 @@ class Lmx2594():
         #return 2*self.fosc;
         #print("2x", self.getField('OSC_2X'), "mult", self.getField('MULT'), "r pre",  self.getField('PLL_R_PRE'), "r", self.getField('PLL_R'))
         return self.fosc*(1+self.getField('OSC_2X'))*self.getField('MULT')/(self.getField('PLL_R_PRE')*self.getField('PLL_R'))
+
+
+
+    def getPllN(self):
+        return self.getField("PLL_N_15_TO_0")+self.getField("PLL_N_18_TO_16")*65536;
+
+    def getPllDen(self):
+        return self.getField("PLL_DEN_15_TO_0")+self.getField("PLL_DEN_31_TO_16")*65536;
+
+    def getPllNum(self):
+        return self.getField("PLL_NUM_15_TO_0")+self.getField("PLL_NUM_31_TO_16")*65536;
+
+    def getVcoFrequency(self):
+        print("N + NUM/DEN = %d +%d/%d"%(self.getPllN(), self.getPllNum(), self.getPllDen())) 
+        return self.getFpd()*(self.getPllN()+fractions.Fraction(self.getPllNum(), self.getPllDen()))
+
+
+
 
     def setCwMode(self):
         pass
@@ -593,6 +611,8 @@ if __name__ == '__main__':
         print("Lock status is", d.locked())
 
         #print("Lock status is", d.locked())
+    print("Configured VCO:", d.getVcoFrequency())
+
     if args.macro:
         print(d.macro(False).decode('ascii').strip())
     input("press enter to continue");
